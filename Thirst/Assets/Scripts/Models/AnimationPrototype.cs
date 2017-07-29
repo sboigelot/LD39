@@ -8,6 +8,11 @@ namespace Assets.Scripts.Models
         [XmlAttribute]
         public string Name;
 
+        public bool Anim
+        {
+            get { return Frames.Count > 1; }
+        }
+
         [XmlElement("Frame")]
         public List<string> Frames;
 

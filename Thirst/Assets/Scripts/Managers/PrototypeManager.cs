@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Assets.Scripts.Localization;
@@ -27,7 +28,7 @@ namespace Assets.Scripts.Managers
             get { return MermaidPrototypes != null ? MermaidPrototypes.FirstOrDefault() : null; }
         }
 
-        public IEnumerator LoadPrototypes()
+        public IEnumerator LoadPrototypes(Action onLoaded)
         {
             AnimationPrototypes = new List<AnimationPrototype>();
             var sub = Load<List<AnimationPrototype>, AnimationPrototype>(AnimationPrototypes, "Animations.xml");
@@ -72,6 +73,11 @@ namespace Assets.Scripts.Managers
             }
 
             Localizer.Instance.EnsureAllLocalKeyExist();
+
+            if (onLoaded != null)
+            {
+                onLoaded();
+            }
             yield break;
         }
 

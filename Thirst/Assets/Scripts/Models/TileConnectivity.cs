@@ -3,11 +3,12 @@
 namespace Assets.Scripts.Models
 {
     [Flags]
-    public enum TileConnectivity
+    public enum DirectionalConnectivity
     {
-        Up = 0x1,
-        Down = 0x2,
-        Left = 0x4,
-        Right = 0x8
+        None = 0,
+        Left = 1,
+        Right = 2,
+        Up = 4,
+        Down = 8
     }
 }

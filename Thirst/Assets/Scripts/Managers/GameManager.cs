@@ -7,12 +7,16 @@ namespace Assets.Scripts.Managers
 {
     public class GameManager : Singleton<GameManager>
     {
-        public Level CurrentLevel { get; set; }
+        public Level Level { get; private set; }
 
         public void NewGame(Level level)
         {
-            CurrentLevel = level;
-            LevelController.Instance.StartLevel(CurrentLevel);
+            Level = level;
+        }
+
+        public void StopLevel()
+        {
+            Level = null;
         }
     }
 }

@@ -1,4 +1,7 @@
-﻿namespace Assets.Scripts.Models
+﻿using System.Collections.Generic;
+using Assets.Scripts.Managers;
+
+namespace Assets.Scripts.Models
 {
     public class Level
     {
@@ -9,6 +12,17 @@
         public Level()
         {
             Tiles = new Tile[9, 14];
+
+            var protoMermaid = PrototypeManager.Instance.MermaidPrototype;
+            Mermaid = new Mermaid
+            {
+                CardsInHand = new List<string>(),
+                Health = protoMermaid.MaxHealth,
+                Attack = protoMermaid.BaseAttack,
+                WaterLevel = protoMermaid.BaseWater,
+                WeaponName = protoMermaid.BaseWeaponName
+            };
+            Mermaid.DrawCards(3);
         }
     }
 }

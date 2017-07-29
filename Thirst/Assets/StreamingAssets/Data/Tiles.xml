@@ -1,14 +1,129 @@
 <ArrayOfTilePrototype>
 
-  <TilePrototype Name="CrossRoad"
-        AnimationName="CrossRoadAnim"
-        TileConnectivity="16"
+  <!--<TilePrototype Name="CrossRoad"
+        AnimationName="URDLAnim"
+        DirectionalConnectivitySave="URDL"
         BuildWaterCost="1"
         Frequency="3">
     <ItemSpawnProbability Name="WaterBottle" Probability="0.125"/>
     <MonsterSpawnProbability Name="Goat" Probability="0"/>
     <WeaponSpawnProbability Name="Trident" Probability="0"/>
     <WeaponSpawnProbability Name="Harpon" Probability="0"/>
+  </TilePrototype>-->
+
+  <!--TODO Duplicate some tile with lower frequency and spawnProbability?-->
+  
+  <TilePrototype Name="0"
+        AnimationName="0Anim"
+        DirectionalConnectivitySave=""
+        BuildWaterCost="1"
+        Frequency="0">
   </TilePrototype>
+
+  <TilePrototype Name="D"
+        AnimationName="DAnim"
+        DirectionalConnectivitySave="D"
+        BuildWaterCost="1"
+        Frequency="3">
+  </TilePrototype>
+
+  <TilePrototype Name="DL"
+        AnimationName="DLAnim"
+        DirectionalConnectivitySave="DL"
+        BuildWaterCost="1"
+        Frequency="3">
+  </TilePrototype>
+
+  <TilePrototype Name="L"
+        AnimationName="LAnim"
+        DirectionalConnectivitySave="L"
+        BuildWaterCost="1"
+        Frequency="3">
+  </TilePrototype>
+
+  <TilePrototype Name="R"
+        AnimationName="RAnim"
+        DirectionalConnectivitySave="R"
+        BuildWaterCost="1"
+        Frequency="3">
+  </TilePrototype>
+
+  <TilePrototype Name="RD"
+        AnimationName="RDAnim"
+        DirectionalConnectivitySave="RD"
+        BuildWaterCost="1"
+        Frequency="3">
+  </TilePrototype>
+
+  <TilePrototype Name="RDL"
+        AnimationName="RDLAnim"
+        DirectionalConnectivitySave="RDL"
+        BuildWaterCost="1"
+        Frequency="3">
+  </TilePrototype>
+
+  <TilePrototype Name="RL"
+        AnimationName="RLAnim"
+        DirectionalConnectivitySave="RL"
+        BuildWaterCost="1"
+        Frequency="3">
+  </TilePrototype>
+
+  <TilePrototype Name="U"
+        AnimationName="UAnim"
+        DirectionalConnectivitySave="U"
+        BuildWaterCost="1"
+        Frequency="3">
+  </TilePrototype>
+
+  <TilePrototype Name="UD"
+        AnimationName="UDAnim"
+        DirectionalConnectivitySave="UD"
+        BuildWaterCost="1"
+        Frequency="3">
+  </TilePrototype>
+
+  <TilePrototype Name="UDL"
+        AnimationName="UDLAnim"
+        DirectionalConnectivitySave="UDL"
+        BuildWaterCost="1"
+        Frequency="3">
+  </TilePrototype>
+
+  <TilePrototype Name="UL"
+        AnimationName="ULAnim"
+        DirectionalConnectivitySave="UL"
+        BuildWaterCost="1"
+        Frequency="3">
+  </TilePrototype>
+
+  <TilePrototype Name="UR"
+        AnimationName="URAnim"
+        DirectionalConnectivitySave="UR"
+        BuildWaterCost="1"
+        Frequency="3">
+  </TilePrototype>
+
+  <TilePrototype Name="URD"
+        AnimationName="URDAnim"
+        DirectionalConnectivitySave="URD"
+        BuildWaterCost="1"
+        Frequency="3">
+  </TilePrototype>
+
+  <TilePrototype Name="URDL"
+        AnimationName="URDLAnim"
+        DirectionalConnectivitySave="URDL"
+        BuildWaterCost="1"
+        Frequency="3">
+  </TilePrototype>
+
+  <TilePrototype Name="URL"
+        AnimationName="URLAnim"
+        DirectionalConnectivitySave="URL"
+        BuildWaterCost="1"
+        Frequency="3">
+  </TilePrototype>
+
 
 </ArrayOfTilePrototype>

@@ -1,5 +1,5 @@
-﻿    using System.Collections.Generic;
-    using System.Xml.Serialization;
+﻿using System.Collections.Generic;
+using System.Xml.Serialization;
 
 namespace Assets.Scripts.Models
 {
@@ -8,13 +8,23 @@ namespace Assets.Scripts.Models
         [XmlAttribute]
         public string Name;
 
-        public TileConnectivity TileConnectivities;
+        public DirectionalConnectivity DirectionalConnectivity;
 
-        [XmlAttribute("TileConnectivity")]
-        public int TileConnectivitiesSave
+        [XmlAttribute("DirectionalConnectivity")]
+        public string DirectionalConnectivitySave
         {
-            get { return (int) TileConnectivities; }
-            set { TileConnectivities = (TileConnectivity)value; }
+            set
+            {
+                DirectionalConnectivity = DirectionalConnectivity.None;
+                if (value.Contains("L"))
+                    DirectionalConnectivity |= DirectionalConnectivity.Left;
+                if (value.Contains("R"))
+                    DirectionalConnectivity |= DirectionalConnectivity.Right;
+                if (value.Contains("U"))
+                    DirectionalConnectivity |= DirectionalConnectivity.Up;
+                if (value.Contains("D"))
+                    DirectionalConnectivity |= DirectionalConnectivity.Down;
+            }
         }
 
         [XmlAttribute]

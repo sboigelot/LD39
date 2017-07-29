@@ -1,10 +1,74 @@
 <ArrayOfAnimationPrototype>
 
   <AnimationPrototype Name="TestAnim"
-             FrameDelay="0.8">
+                      FrameDelay="0.8">
     <Frame>Test\Test1</Frame>
     <Frame>Test\Test2</Frame>
     <Frame>Test\Test3</Frame>
   </AnimationPrototype>
 
+  <AnimationPrototype Name="0Anim">
+    <Frame>Tiles\0</Frame>
+  </AnimationPrototype>
+
+  <AnimationPrototype Name="DAnim">
+    <Frame>Tiles\D</Frame>
+  </AnimationPrototype>
+
+  <AnimationPrototype Name="DLAnim">
+    <Frame>Tiles\DL</Frame>
+  </AnimationPrototype>
+
+  <AnimationPrototype Name="LAnim">
+    <Frame>Tiles\L</Frame>
+  </AnimationPrototype>
+
+  <AnimationPrototype Name="RAnim">
+    <Frame>Tiles\R</Frame>
+  </AnimationPrototype>
+  
+  <AnimationPrototype Name="RDAnim">
+    <Frame>Tiles\RD</Frame>
+  </AnimationPrototype>
+
+  <AnimationPrototype Name="RDLAnim">
+    <Frame>Tiles\RDL</Frame>
+  </AnimationPrototype>
+
+  <AnimationPrototype Name="RLAnim">
+    <Frame>Tiles\RL</Frame>
+  </AnimationPrototype>
+
+  <AnimationPrototype Name="UAnim">
+    <Frame>Tiles\U</Frame>
+  </AnimationPrototype>
+
+  <AnimationPrototype Name="UDAnim">
+    <Frame>Tiles\UD</Frame>
+  </AnimationPrototype>
+
+  <AnimationPrototype Name="UDLAnim">
+    <Frame>Tiles\UDL</Frame>
+  </AnimationPrototype>
+
+  <AnimationPrototype Name="ULAnim">
+    <Frame>Tiles\UL</Frame>
+  </AnimationPrototype>
+
+  <AnimationPrototype Name="URAnim">
+    <Frame>Tiles\UR</Frame>
+  </AnimationPrototype>
+
+  <AnimationPrototype Name="URDAnim">
+    <Frame>Tiles\URD</Frame>
+  </AnimationPrototype>
+
+  <AnimationPrototype Name="URDLAnim">
+    <Frame>Tiles\URDL</Frame>
+  </AnimationPrototype>
+
+  <AnimationPrototype Name="URLAnim">
+    <Frame>Tiles\URL</Frame>
+  </AnimationPrototype>
+  
 </ArrayOfAnimationPrototype>

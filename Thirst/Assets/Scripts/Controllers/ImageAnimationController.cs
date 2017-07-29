@@ -15,11 +15,15 @@ namespace Assets.Scripts.Controllers
 
         public float LastFrameChange;
 
+        public string LastFrameSet;
+
         public void Start()
         {
             image = gameObject.GetComponent<Image>();
         }
 
+        //TODO this is super dirty, change if time during LD39 - it will keep looping on still frame, 
+        //we don't want to use animation for still images
         public void FixedUpdate()
         {
             if (string.IsNullOrEmpty(AnimationName))
@@ -44,9 +48,13 @@ namespace Assets.Scripts.Controllers
             {
                 FrameIndex = 0;
             }
-
+            
             var frame = animationPrototype.Frames[FrameIndex];
-            StartCoroutine(SpriteManager.Set(image, "Images", frame));
+            if (frame != LastFrameSet)
+            {
+                StartCoroutine(SpriteManager.Set(image, "Images", frame));
+                LastFrameSet = frame;
+            }
         }
     }
 }
