@@ -19,6 +19,7 @@ namespace Assets.Scripts.Controllers
         {
             GameManager.Instance.NewGame(new Level());
             HandPanelController.Instance.Redraw();
+            MapController.Instance.Redraw();
             //DialogBoxManager.Instance.Show(typeof(MainMenuController));
             //DialogBoxManager.Instance.Show(typeof(ObjectiveMenuController));
         }
