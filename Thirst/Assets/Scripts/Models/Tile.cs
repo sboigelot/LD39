@@ -119,12 +119,40 @@ namespace Assets.Scripts.Models
 
         public void TakeWeapon()
         {
-            //TODO
+            if (string.IsNullOrEmpty(Weapon))
+            {
+                return;
+            }
+
+            //TODO confirmation swap
+
+            var mermaid = GameManager.Instance.Level.Mermaid;
+            mermaid.WeaponName = Weapon;
+            Weapon = null;
         }
 
         public void TakeItem()
         {
-            //TODO
+            if (string.IsNullOrEmpty(Item))
+            {
+                return;
+            }
+
+            var proto = PrototypeManager.FindItemPrototype(Item);
+            Item = null;
+            if (proto == null)
+            {
+                return;
+            }
+
+            var mermaid = GameManager.Instance.Level.Mermaid;
+            mermaid.WaterLevel = Math.Min(
+                PrototypeManager.Instance.MermaidPrototype.MaxWater,
+                mermaid.WaterLevel + proto.GainWater);
+
+            mermaid.Health = Math.Min(
+                            PrototypeManager.Instance.MermaidPrototype.MaxHealth,
+                            mermaid.Health + proto.GainHealth);
         }
     }
 }

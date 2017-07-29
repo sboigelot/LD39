@@ -5,4 +5,9 @@
         GainAttack="0">
   </WeaponPrototype>
   
+  <WeaponPrototype Name="Spade"
+        AnimationName="SpadeAnim"
+        GainAttack="1">
+  </WeaponPrototype>
+  
 </ArrayOfWeaponPrototype>

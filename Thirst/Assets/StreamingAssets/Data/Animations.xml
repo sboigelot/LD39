@@ -6,9 +6,17 @@
     <Frame>Test\Test2</Frame>
     <Frame>Test\Test3</Frame>
   </AnimationPrototype>
-  
+
   <AnimationPrototype Name="TridentAnim">
     <Frame>Weapon\Trident</Frame>
+  </AnimationPrototype>
+  
+  <AnimationPrototype Name="SpadeAnim">
+    <Frame>Weapon\Spade</Frame>
+  </AnimationPrototype>
+  
+  <AnimationPrototype Name="WaterBottleAnim">
+    <Frame>Items\bouteille</Frame>
   </AnimationPrototype>
   
   <AnimationPrototype Name="WaterAnim"

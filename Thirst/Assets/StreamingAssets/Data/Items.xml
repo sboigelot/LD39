@@ -2,7 +2,7 @@
 
   <ItemPrototype Name="WaterBottle"
         AnimationName="WaterBottleAnim"
-        GainHealth="0"
+        GainHealth="2"
         GainWater="5">
     </ItemPrototype>
 
