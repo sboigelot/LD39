@@ -9,9 +9,13 @@ namespace Assets.Scripts.Managers
 {
     public class SpriteManager : Singleton<SpriteManager>
     {
-        public const string RoomFolder = "Images/Rooms";
+        public const string TileFolder = "Images/Tiles";
 
-        public const string TermitesFolder = "Images/Termites";
+        public const string WeaponFolder = "Images/Weapon";
+
+        public const string ItemFolder = "Images/Items";
+
+        public const string MonsterFolder = "Images/Monsters";
 
         private readonly Sprite notFoundSprite;
 
@@ -90,6 +94,7 @@ namespace Assets.Scripts.Managers
 
             if (!string.IsNullOrEmpty(www.error))
             {
+                Debug.LogWarning("Un-able to load file: " + protocol + fullpath);
                 Debug.LogError(www.error);
                 yield break;
             }
