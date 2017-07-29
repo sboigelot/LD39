@@ -3,6 +3,7 @@
     public class Level
     {
         public Mermaid Mermaid;
+
         public Tile[,] Tiles;
 
         public Level()

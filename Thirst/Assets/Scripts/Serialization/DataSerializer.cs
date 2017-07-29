@@ -80,8 +80,12 @@ namespace Assets.Scripts.Serialization
         {
             return new[]
             {
-                typeof(Level),
-                typeof(PlayerProfile),
+                typeof(AnimationPrototype),
+                typeof(ItemPrototype),
+                typeof(MermaidPrototype),
+                typeof(SpawnProbability),
+                typeof(TilePrototype),
+                typeof(WeaponPrototype),
             };
         }
     }

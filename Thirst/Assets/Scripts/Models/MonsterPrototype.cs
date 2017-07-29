@@ -1,10 +1,19 @@
-﻿namespace Assets.Scripts.Models
+﻿using System.Xml.Serialization;
+
+namespace Assets.Scripts.Models
 {
     public class MonsterPrototype
     {
-        public int BaseHealth;
+        [XmlAttribute]
         public string Name;
-        public int Strength;
+
+        [XmlAttribute]
         public string AnimationName;
+
+        [XmlAttribute]
+        public int BaseHealth;
+
+        [XmlAttribute]
+        public int Strength;
     }
 }

@@ -1,0 +1,14 @@
+<ArrayOfTilePrototype>
+
+  <TilePrototype Name="CrossRoad"
+        AnimationName="CrossRoadAnim"
+        TileConnectivity="16"
+        BuildWaterCost="1"
+        Frequency="3">
+    <ItemSpawnProbability Name="WaterBottle" Probability="0.125"/>
+    <MonsterSpawnProbability Name="Goat" Probability="0"/>
+    <WeaponSpawnProbability Name="Trident" Probability="0"/>
+    <WeaponSpawnProbability Name="Harpon" Probability="0"/>
+  </TilePrototype>
+
+</ArrayOfTilePrototype>

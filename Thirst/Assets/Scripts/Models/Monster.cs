@@ -2,7 +2,7 @@
 {
     public class Monster
     {
-        public int Health;
         public string PrototypeName;
+        public int Health;
     }
 }

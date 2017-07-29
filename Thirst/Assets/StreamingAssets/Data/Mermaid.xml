@@ -1,0 +1,13 @@
+<ArrayOfMermaidPrototype>
+
+  <MermaidPrototype 
+      BaseAttack="1"  
+      BaseHealth="20"  
+      BaseWater="100"  
+      BaseWeaponName="Triton" 
+      MaxHealth="20" 
+      MaxWater="120" 
+      AnimationName="MermaidAnim">
+  </MermaidPrototype>
+  
+</ArrayOfMermaidPrototype>

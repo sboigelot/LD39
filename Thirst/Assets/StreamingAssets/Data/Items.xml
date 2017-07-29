@@ -1,0 +1,9 @@
+<ArrayOfItemPrototype>
+
+  <ItemPrototype Name="WaterBottle"
+        AnimationName="WaterBottleAnim"
+        GainHealth="0"
+        GainWater="5">
+    </ItemPrototype>
+
+</ArrayOfItemPrototype>

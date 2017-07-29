@@ -1,0 +1,10 @@
+<ArrayOfAnimationPrototype>
+
+  <AnimationPrototype Name="TestAnim"
+             FrameDelay="0.2">
+    <Frame>Images/Test.png</Frame>
+    <Frame>Images/Test2.png</Frame>
+    <Frame>Images/Test3.png</Frame>
+  </AnimationPrototype>
+
+</ArrayOfAnimationPrototype>

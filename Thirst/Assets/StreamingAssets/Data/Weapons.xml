@@ -1,0 +1,8 @@
+<ArrayOfWeaponPrototype>
+
+  <WeaponPrototype Name="Trident"
+        AnimationName="TridentAnim"
+        GainAttack="0">
+  </WeaponPrototype>
+  
+</ArrayOfWeaponPrototype>
