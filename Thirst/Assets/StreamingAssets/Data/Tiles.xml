@@ -150,5 +150,4 @@
     <MonsterSpawnProbability Name="Crab" Probability="1"/>
   </TilePrototype>
 
-
 </ArrayOfTilePrototype>

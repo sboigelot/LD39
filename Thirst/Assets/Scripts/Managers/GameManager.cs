@@ -18,5 +18,10 @@ namespace Assets.Scripts.Managers
         {
             Level = null;
         }
+
+        public void GameOver()
+        {
+            //TODO
+        }
     }
 }

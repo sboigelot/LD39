@@ -6,6 +6,26 @@
     <Frame>Test\Test2</Frame>
     <Frame>Test\Test3</Frame>
   </AnimationPrototype>
+  
+  <AnimationPrototype Name="TridentAnim">
+    <Frame>Weapon\Trident</Frame>
+  </AnimationPrototype>
+  
+  <AnimationPrototype Name="WaterAnim"
+                      FrameDelay="0.25">
+    <Frame>UI\Water\eau1</Frame>
+    <Frame>UI\Water\eau2</Frame>
+    <Frame>UI\Water\eau3</Frame>
+    <Frame>UI\Water\eau4</Frame>
+  </AnimationPrototype>
+  
+  <AnimationPrototype Name="HealthAnim"
+                      FrameDelay="0.3">
+    <Frame>UI\Health\vie1</Frame>
+    <Frame>UI\Health\vie2</Frame>
+    <Frame>UI\Health\vie3</Frame>
+    <Frame>UI\Health\vie4</Frame>
+  </AnimationPrototype>
 
   <AnimationPrototype Name="CrabAnim"
                       FrameDelay="0.4">

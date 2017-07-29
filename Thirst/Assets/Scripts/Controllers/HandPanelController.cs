@@ -48,6 +48,12 @@ namespace Assets.Scripts.Controllers
             var tileProto = PrototypeManager.FindTilePrototype(tileProtoName);
             imageAnimationController.AnimationName = tileProto == null ? "0Anim" : tileProto.AnimationName;
             cardHolder.SetActive(true);
+
+            var text = cardHolder.GetComponentInChildren<Text>();
+            if (text != null)
+            {
+                text.text = "-" + tileProto.BuildWaterCost;
+            }
         }
     }
 }

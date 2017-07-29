@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using Assets.Scripts.Controllers;
 using Assets.Scripts.Managers;
@@ -68,6 +69,11 @@ namespace Assets.Scripts.Models
                 return null;
             }
 
+            if (!ConsumeWater(tileProto.BuildWaterCost))
+            {
+                return null;
+            }
+
             var newTile = new Tile
             {
                 PrototypeName = tileProto.Name,
@@ -85,13 +91,57 @@ namespace Assets.Scripts.Models
             return newTile;
         }
 
+        public bool ConsumeWater(int amount)
+        {
+            WaterLevel--;
+
+            if (WaterLevel <= 0)
+            {
+                GameManager.Instance.GameOver();
+                return false;
+            }
+            return true;
+        }
+
         public void Move(int mx, int my)
         {
-            //TODO check if move in bounds
-            //TODO check if move valid
+            int newX = X + mx;
+            int newY = Y + my;
 
-            //TODO eventually trigger combat
-             
+            if (newX < 0 || newX >= GameManager.Instance.Level.Tiles.GetLength(1))
+            {
+                Debug.WriteLine("Invalid move - X out of boundary");
+                return;
+            }
+
+            if (newY < 0 || newY >= GameManager.Instance.Level.Tiles.GetLength(0))
+            {
+                Debug.WriteLine("Invalid move - Y out of boundary");
+                return;
+            }
+
+            var newTile = GameManager.Instance.Level.Tiles[newY, newX];
+            if (newTile == null)
+            {
+                Debug.WriteLine("Invalid move - no tile");
+                return;
+            }
+
+            //TODO Check if tiles are connected
+            
+            if (!ConsumeWater(1))
+            {
+                Debug.WriteLine("Invalid move - no more water");
+                return;
+            }
+
+            if (newTile.Monster != null)
+            {
+                Debug.WriteLine("Invalid move - combat monster");
+                CombatMonster(newTile);
+                return;
+            }
+
             var oldPositionTile =
                 MapController.
                 Instance.
@@ -99,25 +149,83 @@ namespace Assets.Scripts.Models
                 FirstOrDefault(tc => tc.X == X && tc.Y == Y);
 
             //IF no combat -> move
-            X += mx;
-            Y += my;
+            X = newX;
+            Y = newY;
 
             if (oldPositionTile != null)
             {
                 oldPositionTile.Redraw();
             }
-
-            //TODO trigger take weapon / items.
-
+            
             var newPositionTile =
                 MapController.
                 Instance.
                 TileControllers.
                 FirstOrDefault(tc => tc.X == X && tc.Y == Y);
+
+
             if (newPositionTile != null)
             {
+                newPositionTile.Tile.TakeWeapon();
+                newPositionTile.Tile.TakeItem();
                 newPositionTile.Redraw();
             }
+        }
+
+        private void CombatMonster(Tile monsterTile)
+        {
+            var monster = monsterTile.Monster;
+            
+            //deal monster attack to health
+            var monsterProto = PrototypeManager.FindMonsterPrototype(monster.PrototypeName);
+            Health -= monsterProto.Strength;
+
+            if (Health <= 0)
+            {
+                GameManager.Instance.GameOver();
+                return;
+            }
+
+            //deal primary attack to monster
+            monster.Health -= Attack;
+
+            //deal weapon attack to monster
+            if (!string.IsNullOrEmpty(WeaponName))
+            {
+                var proto = PrototypeManager.FindWeaponPrototype(WeaponName);
+                monster.Health -= proto.GainAttack;
+            }
+
+            if (monster.Health <= 0)
+            {
+                monsterTile.Monster = null;
+                var tileController =
+                    MapController.
+                        Instance.
+                        TileControllers.
+                        FirstOrDefault(tc => tc.Tile == monsterTile);
+                if (tileController != null)
+                {
+                    tileController.Redraw();
+                }
+            }
+        }
+
+        public void BinCard(string cardName)
+        {
+            var tileProto = PrototypeManager.FindTilePrototype(cardName);
+            if (tileProto == null)
+            {
+                return;
+            }
+
+            if (!ConsumeWater(tileProto.BuildWaterCost))
+            {
+                return;
+            }
+            
+            Discard(cardName);
+            DrawCards(3);
         }
     }
 }

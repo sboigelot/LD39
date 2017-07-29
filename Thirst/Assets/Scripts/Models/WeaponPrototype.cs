@@ -11,6 +11,6 @@ namespace Assets.Scripts.Models
         public string AnimationName;
 
         [XmlAttribute]
-        public string GainAttack;
+        public int GainAttack;
     }
 }

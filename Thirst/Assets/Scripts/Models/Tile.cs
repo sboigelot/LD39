@@ -116,5 +116,15 @@ namespace Assets.Scripts.Models
 
             Item = prototype.Name;
         }
+
+        public void TakeWeapon()
+        {
+            //TODO
+        }
+
+        public void TakeItem()
+        {
+            //TODO
+        }
     }
 }
