@@ -28,6 +28,7 @@ namespace Assets.Scripts.Controllers
         {
             if (string.IsNullOrEmpty(AnimationName))
             {
+                image.enabled = false;
                 return;
             }
 

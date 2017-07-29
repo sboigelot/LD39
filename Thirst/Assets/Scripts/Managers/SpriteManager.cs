@@ -73,12 +73,20 @@ namespace Assets.Scripts.Managers
 
         public static IEnumerator Set(Image image, string folder, string key)
         {
-            return Set(sprite => { image.sprite = sprite; }, folder, key);
+            return Set(sprite =>
+            {
+                image.sprite = sprite;
+                image.enabled = true;
+            }, folder, key);
         }
 
         public static IEnumerator Set(SpriteRenderer renderer, string folder, string key)
         {
-            return Set(sprite => { renderer.sprite = sprite; }, folder, key);
+            return Set(sprite =>
+            {
+                renderer.sprite = sprite;
+                renderer.enabled = true;
+            }, folder, key);
         }
 
         private IEnumerable LoadImage(string fullpath)

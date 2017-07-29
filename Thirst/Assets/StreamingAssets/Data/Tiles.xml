@@ -18,6 +18,7 @@
         DirectionalConnectivitySave=""
         BuildWaterCost="1"
         Frequency="0">
+    <MonsterSpawnProbability Name="Seegul" Probability="0.15"/>
   </TilePrototype>
 
   <TilePrototype Name="D"
@@ -25,6 +26,7 @@
         DirectionalConnectivitySave="D"
         BuildWaterCost="1"
         Frequency="1">
+    <MonsterSpawnProbability Name="Seegul" Probability="0.15"/>
   </TilePrototype>
 
   <TilePrototype Name="DL"
@@ -40,6 +42,7 @@
         DirectionalConnectivitySave="L"
         BuildWaterCost="1"
         Frequency="1">
+    <MonsterSpawnProbability Name="Seegul" Probability="0.15"/>
   </TilePrototype>
 
   <TilePrototype Name="R"
@@ -55,6 +58,7 @@
         DirectionalConnectivitySave="RD"
         BuildWaterCost="1"
         Frequency="2">
+    <MonsterSpawnProbability Name="Seegul" Probability="0.15"/>
   </TilePrototype>
 
   <TilePrototype Name="RDL"
@@ -63,6 +67,7 @@
         BuildWaterCost="1"
         Frequency="3">
     <MonsterSpawnProbability Name="Crab" Probability="0.25"/>
+    <MonsterSpawnProbability Name="Seegul" Probability="0.15"/>
   </TilePrototype>
 
   <TilePrototype Name="RL"
@@ -78,6 +83,7 @@
         DirectionalConnectivitySave="U"
         BuildWaterCost="1"
         Frequency="1">
+    <MonsterSpawnProbability Name="Seegul" Probability="0.15"/>
   </TilePrototype>
 
   <TilePrototype Name="UD"
@@ -85,6 +91,7 @@
         DirectionalConnectivitySave="UD"
         BuildWaterCost="1"
         Frequency="2">
+    <MonsterSpawnProbability Name="Seegul" Probability="0.15"/>
   </TilePrototype>
 
   <TilePrototype Name="UDL"
@@ -100,6 +107,7 @@
         DirectionalConnectivitySave="UL"
         BuildWaterCost="1"
         Frequency="2">
+    <MonsterSpawnProbability Name="Seegul" Probability="0.15"/>
   </TilePrototype>
 
   <TilePrototype Name="UR"
@@ -107,6 +115,7 @@
         DirectionalConnectivitySave="UR"
         BuildWaterCost="1"
         Frequency="2">
+    <MonsterSpawnProbability Name="Seegul" Probability="0.15"/>
   </TilePrototype>
 
   <TilePrototype Name="URD"
@@ -122,6 +131,7 @@
         DirectionalConnectivitySave="URDL"
         BuildWaterCost="1"
         Frequency="5">
+    <MonsterSpawnProbability Name="Seegul" Probability="0.15"/>
   </TilePrototype>
   
   <TilePrototype Name="StatupCard"
@@ -129,6 +139,7 @@
         DirectionalConnectivitySave="URDL"
         BuildWaterCost="1"
         Frequency="0">
+    <MonsterSpawnProbability Name="Seegul" Probability="0.15"/>
   </TilePrototype>
 
   <TilePrototype Name="URL"

@@ -84,5 +84,40 @@ namespace Assets.Scripts.Models
 
             return newTile;
         }
+
+        public void Move(int mx, int my)
+        {
+            //TODO check if move in bounds
+            //TODO check if move valid
+
+            //TODO eventually trigger combat
+             
+            var oldPositionTile =
+                MapController.
+                Instance.
+                TileControllers.
+                FirstOrDefault(tc => tc.X == X && tc.Y == Y);
+
+            //IF no combat -> move
+            X += mx;
+            Y += my;
+
+            if (oldPositionTile != null)
+            {
+                oldPositionTile.Redraw();
+            }
+
+            //TODO trigger take weapon / items.
+
+            var newPositionTile =
+                MapController.
+                Instance.
+                TileControllers.
+                FirstOrDefault(tc => tc.X == X && tc.Y == Y);
+            if (newPositionTile != null)
+            {
+                newPositionTile.Redraw();
+            }
+        }
     }
 }

@@ -28,6 +28,7 @@ namespace Assets.Scripts.Controllers
         {
             if (string.IsNullOrEmpty(AnimationName))
             {
+                spriteRenderer.enabled = false;
                 return;
             }
 

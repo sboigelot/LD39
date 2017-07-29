@@ -5,5 +5,11 @@
         BaseHealth="2"
         Strength="1">
   </MonsterPrototype>
+
+  <MonsterPrototype Name="Seegul"
+        AnimationName="SeegulAnim"
+        BaseHealth="1"
+        Strength="1">
+  </MonsterPrototype>
   
 </ArrayOfMonsterPrototype>

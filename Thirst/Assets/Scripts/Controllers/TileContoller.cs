@@ -2,7 +2,6 @@
 using Assets.Scripts.Models;
 using Assets.Scripts.UI;
 using UnityEngine;
-using UnityEngine.Networking;
 using UnityEngine.UI;
 
 namespace Assets.Scripts.Controllers
@@ -38,25 +37,23 @@ namespace Assets.Scripts.Controllers
 
             GetComponent<Image>().color = Color.white;
             GetComponent<ImageAnimationController>().AnimationName = Tile.AnimationName;
+            OnTileDisplay = OnTileDisplay ?? CreateOnTileDisplay();
 
             if (X == GameManager.Instance.Level.Mermaid.X &&
                 Y == GameManager.Instance.Level.Mermaid.Y)
             {
-                OnTileDisplay = OnTileDisplay ?? CreateOnTileDisplay();
                 OnTileDisplay.AnimationName = GameManager.Instance.Level.Mermaid.CurrentAnimation;
                 return;
             }
 
             if (Tile.Monster != null)
             {
-                OnTileDisplay = OnTileDisplay ?? CreateOnTileDisplay();
                 OnTileDisplay.AnimationName = Tile.Monster.AnimationName;
                 return;
             }
 
-            if (string.IsNullOrEmpty(Tile.Weapon))
+            if (!string.IsNullOrEmpty(Tile.Weapon))
             {
-                OnTileDisplay = OnTileDisplay ?? CreateOnTileDisplay();
                 var prototype = PrototypeManager.FindWeaponPrototype(Tile.Weapon);
                 if (prototype != null)
                 {
@@ -66,15 +63,19 @@ namespace Assets.Scripts.Controllers
             }
 
 
-            if (string.IsNullOrEmpty(Tile.Item))
+            if (!string.IsNullOrEmpty(Tile.Item))
             {
-                OnTileDisplay = OnTileDisplay ?? CreateOnTileDisplay();
                 var prototype = PrototypeManager.FindItemPrototype(Tile.Item);
                 if (prototype != null)
                 {
                     OnTileDisplay.AnimationName = prototype.AnimationName;
                 }
                 return;
+            }
+
+            if (OnTileDisplay != null)
+            {
+                OnTileDisplay.AnimationName = "";
             }
         }
 

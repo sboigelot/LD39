@@ -182,7 +182,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: b08261bb9f11861409d86f42918f0454, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 48a3a89582170a84eac0cfff25f623d0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1010,6 +1010,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66e7d929eef24b0418e38c196d9b01f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TileControllers: []
 --- !u!1 &766868355
 GameObject:
   m_ObjectHideFlags: 0
@@ -1049,7 +1050,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 740, y: 128}
+  m_SizeDelta: {x: 656, y: 128}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &766868357
 MonoBehaviour:
@@ -1065,12 +1066,12 @@ MonoBehaviour:
   m_Padding:
     m_Left: 0
     m_Right: 0
-    m_Top: 0
+    m_Top: 20
     m_Bottom: 0
   m_ChildAlignment: 4
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 128, y: 128}
+  m_CellSize: {x: 110, y: 110}
   m_Spacing: {x: 20, y: 0}
   m_Constraint: 0
   m_ConstraintCount: 2
@@ -1584,7 +1585,7 @@ MonoBehaviour:
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1920, y: 1080}
-  m_ScreenMatchMode: 0
+  m_ScreenMatchMode: 2
   m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
@@ -1601,7 +1602,7 @@ Canvas:
   m_RenderMode: 0
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
-  m_PixelPerfect: 0
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
@@ -1792,7 +1793,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 43972c199f35bad4b870e0302af43e68, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9f20bc1910f2e2046a0e76d665667fff, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1992,7 +1993,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -2001,9 +2002,10 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: 21300000, guid: 1d427fe1110e35c4ba00a98be70bb3d8,
+      type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: b8fe28fd9d7b1e74cb76f0dd4ea0a6bc, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: d091d2b4140b1184fbf4b74fa715aaeb, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -2054,7 +2056,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 806c944a74b8aaa4c8151c23088233ec, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

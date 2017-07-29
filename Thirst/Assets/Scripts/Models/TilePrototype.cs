@@ -44,5 +44,12 @@ namespace Assets.Scripts.Models
 
         [XmlElement("WeaponSpawnProbability")]
         public List<SpawnProbability> WeaponSpawnProbabilities;
+        
+        public TilePrototype()
+        {
+            ItemSpawnProbabilities = new List<SpawnProbability>();
+            MonsterSpawnProbabilities = new List<SpawnProbability>();
+            WeaponSpawnProbabilities = new List<SpawnProbability>();
+        }
     }
 }

@@ -7,16 +7,52 @@
     <Frame>Test\Test3</Frame>
   </AnimationPrototype>
 
-  <AnimationPrototype Name="CrabAnim">
+  <AnimationPrototype Name="CrabAnim"
+                      FrameDelay="0.4">
     <Frame>Monsters\C1</Frame>
+    <Frame>Monsters\C2</Frame>
+    <Frame>Monsters\C3</Frame>
+    <Frame>Monsters\C2</Frame>
+  </AnimationPrototype>
+  
+  <AnimationPrototype Name="SeegulAnim"
+                      FrameDelay="0.4">
+    <Frame>Monsters\M1</Frame>
+    <Frame>Monsters\M2</Frame>
+    <Frame>Monsters\M3</Frame>
+    <Frame>Monsters\M2</Frame>
   </AnimationPrototype>
 
   <AnimationPrototype Name="SDAnim"
-                      FrameDelay="0.8">
+                      FrameDelay="0.25">
     <Frame>Perso\S-D1</Frame>
     <Frame>Perso\S-D2</Frame>
     <Frame>Perso\S-D3</Frame>
     <Frame>Perso\S-D2</Frame>
+  </AnimationPrototype>
+
+  <AnimationPrototype Name="SUAnim"
+                      FrameDelay="0.25">
+    <Frame>Perso\S-U1</Frame>
+    <Frame>Perso\S-U2</Frame>
+    <Frame>Perso\S-U3</Frame>
+    <Frame>Perso\S-U2</Frame>
+  </AnimationPrototype>
+
+  <AnimationPrototype Name="SLAnim"
+                      FrameDelay="0.25">
+    <Frame>Perso\S-L1</Frame>
+    <Frame>Perso\S-L2</Frame>
+    <Frame>Perso\S-L3</Frame>
+    <Frame>Perso\S-L2</Frame>
+  </AnimationPrototype>
+  
+  <AnimationPrototype Name="SRAnim"
+                      FrameDelay="0.25">
+    <Frame>Perso\S-R1</Frame>
+    <Frame>Perso\S-R2</Frame>
+    <Frame>Perso\S-R3</Frame>
+    <Frame>Perso\S-R2</Frame>
   </AnimationPrototype>
 
   <AnimationPrototype Name="0Anim">
