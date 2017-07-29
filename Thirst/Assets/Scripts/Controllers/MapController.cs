@@ -1,5 +1,6 @@
 ﻿using Assets.Scripts.Managers;
 using Assets.Scripts.Models;
+using Assets.Scripts.UI;
 using Assets.Scripts.Utils;
 using UnityEngine;
 
@@ -33,6 +34,7 @@ namespace Assets.Scripts.Controllers
             var tileController = tile.AddComponent<TileContoller>();
             tileController.Tile = tileContent;
             tileController.Redraw();
+            tile.GetComponent<DropZone>().StealDropParentality = false;
         }
     }
 }

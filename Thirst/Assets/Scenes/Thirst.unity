@@ -208,8 +208,8 @@ GameObject:
   - component: {fileID: 244849783}
   - component: {fileID: 244849782}
   - component: {fileID: 244849780}
-  - component: {fileID: 244849781}
   - component: {fileID: 244849785}
+  - component: {fileID: 244849781}
   m_Layer: 5
   m_Name: Card3Panel
   m_TagString: Untagged
@@ -225,10 +225,10 @@ RectTransform:
   m_GameObject: {fileID: 244849778}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.0000005, y: 1.0000005, z: 1.0000005}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 950880902}
-  m_RootOrder: 4
+  m_Father: {fileID: 766868356}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -258,11 +258,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 244849778}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d733af67bbb97d849926c31f69f022d7, type: 3}
+  m_Script: {fileID: 11500000, guid: aa4fb275ca6f7b348a49b97bdbbe9f07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   parentToReturnTo: {fileID: 0}
   placeHolderParent: {fileID: 0}
+  DefaultDragParent: {fileID: 1892208951}
+  TileProto: 
 --- !u!114 &244849782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -784,8 +786,8 @@ GameObject:
   - component: {fileID: 628506913}
   - component: {fileID: 628506912}
   - component: {fileID: 628506910}
-  - component: {fileID: 628506911}
   - component: {fileID: 628506915}
+  - component: {fileID: 628506911}
   m_Layer: 5
   m_Name: Card2Panel
   m_TagString: Untagged
@@ -801,10 +803,10 @@ RectTransform:
   m_GameObject: {fileID: 628506908}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.0000005, y: 1.0000005, z: 1.0000005}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 950880902}
-  m_RootOrder: 3
+  m_Father: {fileID: 766868356}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -834,11 +836,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 628506908}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d733af67bbb97d849926c31f69f022d7, type: 3}
+  m_Script: {fileID: 11500000, guid: aa4fb275ca6f7b348a49b97bdbbe9f07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   parentToReturnTo: {fileID: 0}
   placeHolderParent: {fileID: 0}
+  DefaultDragParent: {fileID: 1892208951}
+  TileProto: 
 --- !u!114 &628506912
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1006,6 +1010,95 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66e7d929eef24b0418e38c196d9b01f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &766868355
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 766868356}
+  - component: {fileID: 766868360}
+  - component: {fileID: 766868358}
+  - component: {fileID: 766868357}
+  m_Layer: 5
+  m_Name: Panel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &766868356
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 766868355}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1971621001}
+  - {fileID: 628506909}
+  - {fileID: 244849779}
+  - {fileID: 1433063103}
+  - {fileID: 859595730}
+  m_Father: {fileID: 950880902}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 740, y: 128}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &766868357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 766868355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -2095666955, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 4
+  m_StartCorner: 0
+  m_StartAxis: 0
+  m_CellSize: {x: 128, y: 128}
+  m_Spacing: {x: 20, y: 0}
+  m_Constraint: 0
+  m_ConstraintCount: 2
+--- !u!114 &766868358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 766868355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1679637790, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreLayout: 0
+  m_MinWidth: -1
+  m_MinHeight: -1
+  m_PreferredWidth: -1
+  m_PreferredHeight: -1
+  m_FlexibleWidth: -1
+  m_FlexibleHeight: -1
+  m_LayoutPriority: 1
+--- !u!222 &766868360
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 766868355}
 --- !u!1 &859595729
 GameObject:
   m_ObjectHideFlags: 0
@@ -1018,8 +1111,8 @@ GameObject:
   - component: {fileID: 859595734}
   - component: {fileID: 859595733}
   - component: {fileID: 859595731}
-  - component: {fileID: 859595732}
   - component: {fileID: 859595736}
+  - component: {fileID: 859595732}
   m_Layer: 5
   m_Name: Card5Panel
   m_TagString: Untagged
@@ -1035,10 +1128,10 @@ RectTransform:
   m_GameObject: {fileID: 859595729}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.0000005, y: 1.0000005, z: 1.0000005}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 950880902}
-  m_RootOrder: 6
+  m_Father: {fileID: 766868356}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1068,11 +1161,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 859595729}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d733af67bbb97d849926c31f69f022d7, type: 3}
+  m_Script: {fileID: 11500000, guid: aa4fb275ca6f7b348a49b97bdbbe9f07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   parentToReturnTo: {fileID: 0}
   placeHolderParent: {fileID: 0}
+  DefaultDragParent: {fileID: 1892208951}
+  TileProto: 
 --- !u!114 &859595733
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1145,9 +1240,8 @@ GameObject:
   m_Component:
   - component: {fileID: 950880902}
   - component: {fileID: 950880905}
-  - component: {fileID: 950880904}
-  - component: {fileID: 950880903}
   - component: {fileID: 950880906}
+  - component: {fileID: 950880903}
   m_Layer: 5
   m_Name: HandPanel
   m_TagString: Untagged
@@ -1167,11 +1261,7 @@ RectTransform:
   m_Children:
   - {fileID: 1981330361}
   - {fileID: 1309456677}
-  - {fileID: 1971621001}
-  - {fileID: 628506909}
-  - {fileID: 244849779}
-  - {fileID: 1433063103}
-  - {fileID: 859595730}
+  - {fileID: 766868356}
   - {fileID: 1951299547}
   m_Father: {fileID: 1892208951}
   m_RootOrder: 0
@@ -1189,7 +1279,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 950880901}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -2095666955, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: -405508275, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
@@ -1198,39 +1288,11 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 4
-  m_StartCorner: 0
-  m_StartAxis: 0
-  m_CellSize: {x: 128, y: 128}
-  m_Spacing: {x: 32, y: 0}
-  m_Constraint: 0
-  m_ConstraintCount: 2
---- !u!114 &950880904
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 950880901}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
+  m_Spacing: 20
+  m_ChildForceExpandWidth: 0
+  m_ChildForceExpandHeight: 0
+  m_ChildControlWidth: 0
+  m_ChildControlHeight: 0
 --- !u!222 &950880905
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1287,7 +1349,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 128, y: 128}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1309456678
 MonoBehaviour:
@@ -1353,8 +1415,8 @@ GameObject:
   - component: {fileID: 1433063107}
   - component: {fileID: 1433063106}
   - component: {fileID: 1433063104}
-  - component: {fileID: 1433063105}
   - component: {fileID: 1433063109}
+  - component: {fileID: 1433063105}
   m_Layer: 5
   m_Name: Card4Panel
   m_TagString: Untagged
@@ -1370,10 +1432,10 @@ RectTransform:
   m_GameObject: {fileID: 1433063102}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.0000005, y: 1.0000005, z: 1.0000005}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 950880902}
-  m_RootOrder: 5
+  m_Father: {fileID: 766868356}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1403,11 +1465,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1433063102}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d733af67bbb97d849926c31f69f022d7, type: 3}
+  m_Script: {fileID: 11500000, guid: aa4fb275ca6f7b348a49b97bdbbe9f07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   parentToReturnTo: {fileID: 0}
   placeHolderParent: {fileID: 0}
+  DefaultDragParent: {fileID: 1892208951}
+  TileProto: 
 --- !u!114 &1433063106
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1683,12 +1747,12 @@ RectTransform:
   m_LocalScale: {x: 1.0000005, y: 1.0000005, z: 1.0000005}
   m_Children: []
   m_Father: {fileID: 950880902}
-  m_RootOrder: 7
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 128, y: 128}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1951299548
 MonoBehaviour:
@@ -1754,8 +1818,8 @@ GameObject:
   - component: {fileID: 1971621005}
   - component: {fileID: 1971621004}
   - component: {fileID: 1971621002}
-  - component: {fileID: 1971621003}
   - component: {fileID: 1971621007}
+  - component: {fileID: 1971621003}
   m_Layer: 5
   m_Name: Card1Panel
   m_TagString: Untagged
@@ -1771,10 +1835,10 @@ RectTransform:
   m_GameObject: {fileID: 1971621000}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.0000005, y: 1.0000005, z: 1.0000005}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 950880902}
-  m_RootOrder: 2
+  m_Father: {fileID: 766868356}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1804,11 +1868,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1971621000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d733af67bbb97d849926c31f69f022d7, type: 3}
+  m_Script: {fileID: 11500000, guid: aa4fb275ca6f7b348a49b97bdbbe9f07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   parentToReturnTo: {fileID: 0}
   placeHolderParent: {fileID: 0}
+  DefaultDragParent: {fileID: 1892208951}
+  TileProto: 
 --- !u!114 &1971621004
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1907,7 +1973,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 128, y: 128}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1981330362
 MonoBehaviour:

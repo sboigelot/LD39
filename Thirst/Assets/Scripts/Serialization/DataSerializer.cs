@@ -48,7 +48,7 @@ namespace Assets.Scripts.Serialization
             var protocol = "file:///";
 #endif
 
-            Debug.Log("Loading file: " + fileName);
+            //Debug.Log("Loading file: " + fileName);
             var www = new WWW(protocol + fileName);
             yield return www;
 

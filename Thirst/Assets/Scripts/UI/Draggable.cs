@@ -15,6 +15,8 @@ namespace Assets.Scripts.UI
 
         private GameObject placeHolder = null;
 
+        public Transform DefaultDragParent;
+
         public void OnBeginDrag(PointerEventData eventData)
         {
             placeHolder = new GameObject();
@@ -29,7 +31,7 @@ namespace Assets.Scripts.UI
 
             parentToReturnTo = this.transform.parent;
             placeHolderParent = parentToReturnTo;
-            this.transform.SetParent(this.transform.parent.parent);
+            this.transform.SetParent(DefaultDragParent ?? this.transform.parent.parent);
 
             var cg = this.GetComponent<CanvasGroup>();
             if (cg != null)

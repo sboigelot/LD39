@@ -5,13 +5,18 @@ namespace Assets.Scripts.UI
 {
     public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerExitHandler
     {
+        public bool StealDropParentality;
+
         public void OnDrop(PointerEventData eventData)
         {
-            Debug.Log(eventData.pointerDrag.name + " dropped on " + gameObject.name);
+            //Debug.Log(eventData.pointerDrag.name + " dropped on " + gameObject.name);
             var d = eventData.pointerDrag.GetComponent<Draggable>();
             if (d != null)
             {
-                d.parentToReturnTo = transform;
+                if (StealDropParentality)
+                {
+                    d.parentToReturnTo = transform;
+                }
                 OnDrop(d);
             }
         }

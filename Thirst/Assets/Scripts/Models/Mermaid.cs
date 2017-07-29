@@ -1,8 +1,10 @@
 ﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using Assets.Scripts.Controllers;
 using Assets.Scripts.Managers;
-using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Assets.Scripts.Models
 {
@@ -44,6 +46,37 @@ namespace Assets.Scripts.Models
 
             var pickedCard = allCards[cardIndex - 1];
             CardsInHand.Add(pickedCard.Name);
+        }
+
+        public void Discard(string tileName)
+        {
+            var i = CardsInHand.IndexOf(tileName);
+            CardsInHand.RemoveAt(i);
+        }
+
+        public Tile UseCard(string cardName)
+        {
+            var tileProto = PrototypeManager.FindTilePrototype(cardName);
+            if (tileProto == null)
+            {
+                return null;
+            }
+
+            var newTile = new Tile
+            {
+                PrototypeName = tileProto.Name,
+                AnimationName = tileProto.AnimationName
+            };
+
+            newTile.TriggerMonsterSpawnProbability(tileProto);
+            //TODO: newTile.TriggerWeaponSpawnProbability(tileProto, newTile);
+            //TODO: newTile.TriggerItemSpawnProbability(tileProto, newTile);
+
+            GameManager.Instance.Level.Mermaid.Discard(cardName);
+            GameManager.Instance.Level.Mermaid.DrawCards(3);
+            HandPanelController.Instance.Redraw();
+
+            return newTile;
         }
     }
 }

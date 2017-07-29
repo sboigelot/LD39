@@ -24,35 +24,35 @@
         AnimationName="DAnim"
         DirectionalConnectivitySave="D"
         BuildWaterCost="1"
-        Frequency="3">
+        Frequency="1">
   </TilePrototype>
 
   <TilePrototype Name="DL"
         AnimationName="DLAnim"
         DirectionalConnectivitySave="DL"
         BuildWaterCost="1"
-        Frequency="3">
+        Frequency="2">
   </TilePrototype>
 
   <TilePrototype Name="L"
         AnimationName="LAnim"
         DirectionalConnectivitySave="L"
         BuildWaterCost="1"
-        Frequency="3">
+        Frequency="1">
   </TilePrototype>
 
   <TilePrototype Name="R"
         AnimationName="RAnim"
         DirectionalConnectivitySave="R"
         BuildWaterCost="1"
-        Frequency="3">
+        Frequency="1">
   </TilePrototype>
 
   <TilePrototype Name="RD"
         AnimationName="RDAnim"
         DirectionalConnectivitySave="RD"
         BuildWaterCost="1"
-        Frequency="3">
+        Frequency="2">
   </TilePrototype>
 
   <TilePrototype Name="RDL"
@@ -66,21 +66,21 @@
         AnimationName="RLAnim"
         DirectionalConnectivitySave="RL"
         BuildWaterCost="1"
-        Frequency="3">
+        Frequency="2">
   </TilePrototype>
 
   <TilePrototype Name="U"
         AnimationName="UAnim"
         DirectionalConnectivitySave="U"
         BuildWaterCost="1"
-        Frequency="3">
+        Frequency="1">
   </TilePrototype>
 
   <TilePrototype Name="UD"
         AnimationName="UDAnim"
         DirectionalConnectivitySave="UD"
         BuildWaterCost="1"
-        Frequency="3">
+        Frequency="2">
   </TilePrototype>
 
   <TilePrototype Name="UDL"
@@ -94,14 +94,14 @@
         AnimationName="ULAnim"
         DirectionalConnectivitySave="UL"
         BuildWaterCost="1"
-        Frequency="3">
+        Frequency="2">
   </TilePrototype>
 
   <TilePrototype Name="UR"
         AnimationName="URAnim"
         DirectionalConnectivitySave="UR"
         BuildWaterCost="1"
-        Frequency="3">
+        Frequency="2">
   </TilePrototype>
 
   <TilePrototype Name="URD"
@@ -115,7 +115,7 @@
         AnimationName="URDLAnim"
         DirectionalConnectivitySave="URDL"
         BuildWaterCost="1"
-        Frequency="3">
+        Frequency="4">
   </TilePrototype>
 
   <TilePrototype Name="URL"

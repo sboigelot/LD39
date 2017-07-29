@@ -72,7 +72,7 @@ namespace Assets.Scripts.Managers
                 yield return s;
             }
 
-            Localizer.Instance.EnsureAllLocalKeyExist();
+            //Localizer.Instance.EnsureAllLocalKeyExist();
 
             if (onLoaded != null)
             {
