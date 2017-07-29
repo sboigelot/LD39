@@ -1,8 +1,8 @@
 <ArrayOfMonsterPrototype>
 
-  <MonsterPrototype Name="Goat"
-        AnimationName="GoatAnim"
-        BaseHealth="5"
+  <MonsterPrototype Name="Crab"
+        AnimationName="CrabAnim"
+        BaseHealth="2"
         Strength="1">
   </MonsterPrototype>
   

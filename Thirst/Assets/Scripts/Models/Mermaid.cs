@@ -17,6 +17,11 @@ namespace Assets.Scripts.Models
         public int WaterLevel;
         public string WeaponName;
 
+        public int X;
+        public int Y;
+
+        public string CurrentAnimation = "SDAnim";
+
         public Mermaid()
         {
             CardsInHand = new List<string>();
@@ -51,7 +56,10 @@ namespace Assets.Scripts.Models
         public void Discard(string tileName)
         {
             var i = CardsInHand.IndexOf(tileName);
-            CardsInHand.RemoveAt(i);
+            if (i >= 0)
+            {
+                CardsInHand.RemoveAt(i);
+            }
         }
 
         public Tile UseCard(string cardName)
@@ -72,8 +80,8 @@ namespace Assets.Scripts.Models
             //TODO: newTile.TriggerWeaponSpawnProbability(tileProto, newTile);
             //TODO: newTile.TriggerItemSpawnProbability(tileProto, newTile);
 
-            GameManager.Instance.Level.Mermaid.Discard(cardName);
-            GameManager.Instance.Level.Mermaid.DrawCards(3);
+            Discard(cardName);
+            DrawCards(3);
             HandPanelController.Instance.Redraw();
 
             return newTile;

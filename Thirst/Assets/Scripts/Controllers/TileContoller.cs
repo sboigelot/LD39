@@ -15,6 +15,8 @@ namespace Assets.Scripts.Controllers
         public int X;
         public Tile Tile;
 
+        public ImageAnimationController OnTileDisplay;
+
         public void Awake()
         {
             var lg = GetComponent<HorizontalLayoutGroup>();
@@ -36,6 +38,28 @@ namespace Assets.Scripts.Controllers
 
             GetComponent<Image>().color = Color.white;
             GetComponent<ImageAnimationController>().AnimationName = Tile.AnimationName;
+
+            if (X == GameManager.Instance.Level.Mermaid.X &&
+                Y == GameManager.Instance.Level.Mermaid.Y)
+            {
+                OnTileDisplay = OnTileDisplay ?? BuildOnTileDisplay();
+                OnTileDisplay.AnimationName = GameManager.Instance.Level.Mermaid.CurrentAnimation;
+                return;
+            }
+
+            if (Tile.Monster != null)
+            {
+                OnTileDisplay = OnTileDisplay ?? BuildOnTileDisplay();
+                OnTileDisplay.AnimationName = Tile.Monster.AnimationName;
+                return;
+            }
+        }
+
+        private ImageAnimationController BuildOnTileDisplay()
+        {
+            var onTileDisplay = new GameObject("onTileDisplay");
+            onTileDisplay.transform.SetParent(this.transform);
+            return onTileDisplay.AddComponent<ImageAnimationController>();
         }
 
         public override void OnDrop(Draggable draggable)

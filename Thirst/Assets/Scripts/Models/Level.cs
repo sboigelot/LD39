@@ -20,8 +20,12 @@ namespace Assets.Scripts.Models
                 Health = protoMermaid.MaxHealth,
                 Attack = protoMermaid.BaseAttack,
                 WaterLevel = protoMermaid.BaseWater,
-                WeaponName = protoMermaid.BaseWeaponName
+                WeaponName = protoMermaid.BaseWeaponName,
+                X = 7, //TODO randomize
+                Y = 3 //TODO randomize
             };
+
+            Tiles[Mermaid.Y, Mermaid.X] = Mermaid.UseCard("StatupCard");
             Mermaid.DrawCards(3);
         }
     }

@@ -7,6 +7,18 @@
     <Frame>Test\Test3</Frame>
   </AnimationPrototype>
 
+  <AnimationPrototype Name="CrabAnim">
+    <Frame>Monsters\C1</Frame>
+  </AnimationPrototype>
+
+  <AnimationPrototype Name="SDAnim"
+                      FrameDelay="0.8">
+    <Frame>Perso\S-D1</Frame>
+    <Frame>Perso\S-D2</Frame>
+    <Frame>Perso\S-D3</Frame>
+    <Frame>Perso\S-D2</Frame>
+  </AnimationPrototype>
+
   <AnimationPrototype Name="0Anim">
     <Frame>Tiles\0</Frame>
   </AnimationPrototype>

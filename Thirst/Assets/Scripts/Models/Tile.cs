@@ -46,6 +46,7 @@ namespace Assets.Scripts.Models
             Monster = new Monster
             {
                 PrototypeName = monsterProto.Name,
+                AnimationName = monsterProto.AnimationName,
                 Health = monsterProto.BaseHealth
             };
         }

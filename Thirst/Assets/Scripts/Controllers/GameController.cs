@@ -11,7 +11,7 @@ namespace Assets.Scripts.Controllers
         public void Awake()
         {
             StartCoroutine(
-                PrototypeManager.Instance.LoadPrototypes(OnPrototypeLoaded)
+                    PrototypeManager.Instance.LoadPrototypes(OnPrototypeLoaded)
                 );
         }
 

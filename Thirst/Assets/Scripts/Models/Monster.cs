@@ -4,5 +4,6 @@
     {
         public string PrototypeName;
         public int Health;
+        public string AnimationName;
     }
 }

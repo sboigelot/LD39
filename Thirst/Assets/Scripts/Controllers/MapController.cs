@@ -32,6 +32,8 @@ namespace Assets.Scripts.Controllers
             var tile = new GameObject(string.Format("Tile[{0},{1}]", y, x));
             tile.transform.SetParent(this.transform);
             var tileController = tile.AddComponent<TileContoller>();
+            tileController.X = x;
+            tileController.Y = y;
             tileController.Tile = tileContent;
             tileController.Redraw();
             tile.GetComponent<DropZone>().StealDropParentality = false;
