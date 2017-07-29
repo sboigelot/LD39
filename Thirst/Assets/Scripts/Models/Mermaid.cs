@@ -1,6 +1,4 @@
-﻿
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using Assets.Scripts.Controllers;
 using Assets.Scripts.Managers;
@@ -77,8 +75,8 @@ namespace Assets.Scripts.Models
             };
 
             newTile.TriggerMonsterSpawnProbability(tileProto);
-            //TODO: newTile.TriggerWeaponSpawnProbability(tileProto, newTile);
-            //TODO: newTile.TriggerItemSpawnProbability(tileProto, newTile);
+            newTile.TriggerWeaponSpawnProbability(tileProto);
+            newTile.TriggerItemSpawnProbability(tileProto);
 
             Discard(cardName);
             DrawCards(3);

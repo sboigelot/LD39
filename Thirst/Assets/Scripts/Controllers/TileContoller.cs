@@ -42,20 +42,43 @@ namespace Assets.Scripts.Controllers
             if (X == GameManager.Instance.Level.Mermaid.X &&
                 Y == GameManager.Instance.Level.Mermaid.Y)
             {
-                OnTileDisplay = OnTileDisplay ?? BuildOnTileDisplay();
+                OnTileDisplay = OnTileDisplay ?? CreateOnTileDisplay();
                 OnTileDisplay.AnimationName = GameManager.Instance.Level.Mermaid.CurrentAnimation;
                 return;
             }
 
             if (Tile.Monster != null)
             {
-                OnTileDisplay = OnTileDisplay ?? BuildOnTileDisplay();
+                OnTileDisplay = OnTileDisplay ?? CreateOnTileDisplay();
                 OnTileDisplay.AnimationName = Tile.Monster.AnimationName;
+                return;
+            }
+
+            if (string.IsNullOrEmpty(Tile.Weapon))
+            {
+                OnTileDisplay = OnTileDisplay ?? CreateOnTileDisplay();
+                var prototype = PrototypeManager.FindWeaponPrototype(Tile.Weapon);
+                if (prototype != null)
+                {
+                    OnTileDisplay.AnimationName = prototype.AnimationName;
+                }
+                return;
+            }
+
+
+            if (string.IsNullOrEmpty(Tile.Item))
+            {
+                OnTileDisplay = OnTileDisplay ?? CreateOnTileDisplay();
+                var prototype = PrototypeManager.FindItemPrototype(Tile.Item);
+                if (prototype != null)
+                {
+                    OnTileDisplay.AnimationName = prototype.AnimationName;
+                }
                 return;
             }
         }
 
-        private ImageAnimationController BuildOnTileDisplay()
+        private ImageAnimationController CreateOnTileDisplay()
         {
             var onTileDisplay = new GameObject("onTileDisplay");
             onTileDisplay.transform.SetParent(this.transform);
@@ -69,9 +92,20 @@ namespace Assets.Scripts.Controllers
             {
                 return;
             }
+
+            if (!CanUse(card.TileProto))
+            {
+                return;
+            }
+
             Tile = GameManager.Instance.Level.Mermaid.UseCard(card.TileProto);
             
             Redraw();
+        }
+
+        private bool CanUse(string cardTileProto)
+        {
+            return true; //TODO implement tile connexion check
         }
     }
 }

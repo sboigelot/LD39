@@ -37,18 +37,84 @@ namespace Assets.Scripts.Models
                 selectedIndex++;
             }
 
-            var monsterProto = PrototypeManager.FindMonsterPrototype(selectedSpawn.Name);
-            if (monsterProto == null)
+            var prototype = PrototypeManager.FindMonsterPrototype(selectedSpawn.Name);
+            if (prototype == null)
             {
                 return;
             }
 
             Monster = new Monster
             {
-                PrototypeName = monsterProto.Name,
-                AnimationName = monsterProto.AnimationName,
-                Health = monsterProto.BaseHealth
+                PrototypeName = prototype.Name,
+                AnimationName = prototype.AnimationName,
+                Health = prototype.BaseHealth
             };
+        }
+
+        public void TriggerWeaponSpawnProbability(TilePrototype tileProto)
+        {
+            var sumProb = tileProto.WeaponSpawnProbabilities.Sum(p => p.Probability);
+
+            if (Math.Abs(sumProb) < 0.0001f)
+            {
+                return;
+            }
+
+            var randomProb = Random.Range(0f, 1f);
+            if (randomProb >= sumProb)
+            {
+                return;
+            }
+
+            SpawnProbability selectedSpawn = null;
+            var selectedIndex = 0;
+            while (randomProb >= 0)
+            {
+                selectedSpawn = tileProto.WeaponSpawnProbabilities[selectedIndex];
+                randomProb -= selectedSpawn.Probability;
+                selectedIndex++;
+            }
+
+            var prototype = PrototypeManager.FindWeaponPrototype(selectedSpawn.Name);
+            if (prototype == null)
+            {
+                return;
+            }
+
+            Weapon = prototype.Name;
+        }
+
+        public void TriggerItemSpawnProbability(TilePrototype tileProto)
+        {
+            var sumProb = tileProto.ItemSpawnProbabilities.Sum(p => p.Probability);
+
+            if (Math.Abs(sumProb) < 0.0001f)
+            {
+                return;
+            }
+
+            var randomProb = Random.Range(0f, 1f);
+            if (randomProb >= sumProb)
+            {
+                return;
+            }
+
+            SpawnProbability selectedSpawn = null;
+            var selectedIndex = 0;
+            while (randomProb >= 0)
+            {
+                selectedSpawn = tileProto.ItemSpawnProbabilities[selectedIndex];
+                randomProb -= selectedSpawn.Probability;
+                selectedIndex++;
+            }
+
+            var prototype = PrototypeManager.FindItemPrototype(selectedSpawn.Name);
+            if (prototype == null)
+            {
+                return;
+            }
+
+            Item = prototype.Name;
         }
     }
 }
