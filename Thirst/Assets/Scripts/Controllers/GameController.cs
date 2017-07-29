@@ -18,6 +18,7 @@ namespace Assets.Scripts.Controllers
         private void OnPrototypeLoaded()
         {
             GameManager.Instance.NewGame(new Level());
+            HandPanelController.Instance.Redraw();
             //DialogBoxManager.Instance.Show(typeof(MainMenuController));
             //DialogBoxManager.Instance.Show(typeof(ObjectiveMenuController));
         }
