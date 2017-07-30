@@ -1,15 +1,20 @@
 ﻿using System.Collections;
 using System.Linq;
+using System.Xml;
 using Assets.Scripts.Managers;
+using Assets.Scripts.Managers.DialogBoxes;
 using Assets.Scripts.Models;
 using UnityEngine;
 
 namespace Assets.Scripts.Controllers
 {
     public class GameController : MonoBehaviourSingleton<GameController>
-    {        
+    {
+        public GameObject StartGamePanel;
+
         public void Awake()
         {
+            StartGamePanel.SetActive(true);
             StartCoroutine(
                     PrototypeManager.Instance.LoadPrototypes(OnPrototypeLoaded)
                 );
@@ -17,17 +22,21 @@ namespace Assets.Scripts.Controllers
 
         private void OnPrototypeLoaded()
         {
+            RestartGame();
+            //DialogBoxManager.Instance.Show(typeof(MainMenuController));
+        }
+
+        public void RestartGame()
+        {
             GameManager.Instance.NewGame(new Level());
             HandPanelController.Instance.Redraw();
             MapController.Instance.Redraw();
-            //DialogBoxManager.Instance.Show(typeof(MainMenuController));
-            //DialogBoxManager.Instance.Show(typeof(ObjectiveMenuController));
         }
-        
-        public void GameOver(bool victory)
+
+        public void GameOver(GameOverReason reason)
         {
-            GameManager.Instance.StopLevel();
-            //DialogBoxManager.Instance.Show(typeof(EndGameController), victory);
+            GameManager.Instance.GameOver(reason);
+            DialogBoxManager.Instance.Show(typeof(EndGameDialogBox), reason);
         }
 
         public void Update()

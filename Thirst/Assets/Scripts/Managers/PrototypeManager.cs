@@ -92,7 +92,7 @@ namespace Assets.Scripts.Managers
 
         public static AnimationPrototype FindAnimationPrototype(string name)
         {
-            var proto = Instance.AnimationPrototypes.SingleOrDefault(r => r.Name == name);
+            var proto = Instance.AnimationPrototypes.FirstOrDefault(r => r.Name == name);
             if (proto == null)
             {
                 Debug.LogWarning("PrototypeManager coudn't find prototype with name: " + name);
@@ -102,7 +102,7 @@ namespace Assets.Scripts.Managers
 
         public static TilePrototype FindTilePrototype(string name)
         {
-            var proto = Instance.TilePrototypes.SingleOrDefault(r => r.Name == name);
+            var proto = Instance.TilePrototypes.FirstOrDefault(r => r.Name == name);
             if (proto == null)
             {
                 Debug.LogWarning("PrototypeManager coudn't find prototype with name: " + name);
@@ -112,7 +112,7 @@ namespace Assets.Scripts.Managers
 
         public static MonsterPrototype FindMonsterPrototype(string name)
         {
-            var proto = Instance.MonsterPrototypes.SingleOrDefault(r => r.Name == name);
+            var proto = Instance.MonsterPrototypes.FirstOrDefault(r => r.Name == name);
             if (proto == null)
             {
                 Debug.LogWarning("PrototypeManager coudn't find prototype with name: " + name);
@@ -122,7 +122,7 @@ namespace Assets.Scripts.Managers
 
         public static ItemPrototype FindItemPrototype(string name)
         {
-            var proto = Instance.ItemPrototypes.SingleOrDefault(r => r.Name == name);
+            var proto = Instance.ItemPrototypes.FirstOrDefault(r => r.Name == name);
             if (proto == null)
             {
                 Debug.LogWarning("PrototypeManager coudn't find prototype with name: " + name);
@@ -132,7 +132,7 @@ namespace Assets.Scripts.Managers
 
         public static WeaponPrototype FindWeaponPrototype(string name)
         {
-            var proto = Instance.WeaponPrototypes.SingleOrDefault(r => r.Name == name);
+            var proto = Instance.WeaponPrototypes.FirstOrDefault(r => r.Name == name);
             if (proto == null)
             {
                 Debug.LogWarning("PrototypeManager coudn't find prototype with name: " + name);

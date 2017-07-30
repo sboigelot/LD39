@@ -19,8 +19,9 @@ namespace Assets.Scripts.Managers
             Level = null;
         }
 
-        public void GameOver()
+        public void GameOver(GameOverReason reason)
         {
+            StopLevel();
             //TODO
         }
     }

@@ -17,9 +17,5 @@
         GainHealth="5"
         GainWater="15">
   </ItemPrototype>
-
-  <ItemPrototype Name="Sewer"
-        AnimationName="SewerAnim">
-  </ItemPrototype>
   
 </ArrayOfItemPrototype>

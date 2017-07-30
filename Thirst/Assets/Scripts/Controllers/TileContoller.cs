@@ -29,10 +29,24 @@ namespace Assets.Scripts.Controllers
 
         public void Redraw()
         {
+            if (GameManager.Instance.Level == null)
+            {
+                return;
+            }
+
             if (Tile == null)
             {
-                image.color = TileIsAccessible() ? Color.white : new Color(0, 0, 0, 0);
-                imageAnimationController.AnimationName = "0Anim";
+                if (X == GameManager.Instance.Level.ExitLocationX &&
+                    Y == GameManager.Instance.Level.ExitLocationY)
+                {
+                    image.color = TileHasOtherTileNext() ? Color.white : new Color(0, 0, 0, 0);
+                    imageAnimationController.AnimationName = "GridAnim";
+                }
+                else
+                {
+                    image.color = TileIsAccessible() ? Color.white : new Color(0, 0, 0, 0);
+                    imageAnimationController.AnimationName = "0Anim";
+                }
                 return;
             }
 
@@ -51,6 +65,13 @@ namespace Assets.Scripts.Controllers
             if (Tile.Monster != null)
             {
                 OnTileDisplay.AnimationName = Tile.Monster.AnimationName;
+                return;
+            }
+
+            if (X == GameManager.Instance.Level.ExitLocationX &&
+                Y == GameManager.Instance.Level.ExitLocationY)
+            {
+                OnTileDisplay.AnimationName = "SewerAnim";
                 return;
             }
 
@@ -79,6 +100,27 @@ namespace Assets.Scripts.Controllers
             {
                 OnTileDisplay.AnimationName = "";
             }
+        }
+
+        private bool TileHasOtherTileNext()
+        {
+            if (Tile != null)
+            {
+                return true;
+            }
+
+            var level = GameManager.Instance.Level;
+            if (level == null || level.Tiles == null)
+            {
+                return false;
+            }
+
+            var tileConnected = level.TileExist(X - 1, Y) ||
+                                level.TileExist(X + 1, Y) ||
+                                level.TileExist(X, Y - 1) ||
+                                level.TileExist(X, Y + 1);
+
+            return tileConnected;
         }
 
         private bool TileIsAccessible()

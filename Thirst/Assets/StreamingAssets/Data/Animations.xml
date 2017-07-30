@@ -174,5 +174,15 @@
   <AnimationPrototype Name="URLAnim">
     <Frame>Tiles\URL</Frame>
   </AnimationPrototype>
+
+  <AnimationPrototype Name="GridAnim"
+        FrameDelay="0.60">
+    <Frame>Tiles\grid</Frame>
+    <Frame>Tiles\empty</Frame>
+  </AnimationPrototype>
+
+  <AnimationPrototype Name="SewerAnim">
+    <Frame>Tiles\exit</Frame>
+  </AnimationPrototype>
   
 </ArrayOfAnimationPrototype>

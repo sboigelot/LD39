@@ -12,6 +12,11 @@ namespace Assets.Scripts.Controllers
 
         public void RedrawMonstersSurroundingMermaid()
         {
+            if (GameManager.Instance.Level == null)
+            {
+                return;
+            }
+
             var mermaid = GameManager.Instance.Level.Mermaid;
             RedrawSurroundingMonsters(mermaid.X, mermaid.Y);
         }

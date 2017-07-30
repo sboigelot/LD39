@@ -21,7 +21,7 @@ namespace Assets.Scripts.Managers.DialogBoxes
             IsOpen = true;
         }
 
-        protected abstract void OnScreenOpen(CT context);
+        protected abstract void OnScreenOpen(CT reason);
 
         public void CloseDialog()
         {

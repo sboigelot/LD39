@@ -97,7 +97,7 @@ namespace Assets.Scripts.Models
 
             if (WaterLevel <= 0)
             {
-                GameManager.Instance.GameOver();
+                GameController.Instance.GameOver(GameOverReason.Thirst);
                 return false;
             }
             return true;
@@ -168,14 +168,24 @@ namespace Assets.Scripts.Models
                 Instance.
                 TileControllers.
                 FirstOrDefault(tc => tc.X == X && tc.Y == Y);
+            
+            if (newPositionTile == null)
+            {
+                return;
+            }
 
-
-            if (newPositionTile != null)
+            if (X == GameManager.Instance.Level.ExitLocationX &&
+                Y == GameManager.Instance.Level.ExitLocationY)
+            {
+                GameController.Instance.GameOver(GameOverReason.Victory);
+            }
+            else
             {
                 newPositionTile.Tile.TakeWeapon();
                 newPositionTile.Tile.TakeItem();
-                newPositionTile.Redraw();
             }
+
+            newPositionTile.Redraw();
         }
 
         private void CombatMonster(Tile monsterTile)
@@ -188,7 +198,7 @@ namespace Assets.Scripts.Models
 
             if (Health <= 0)
             {
-                GameManager.Instance.GameOver();
+                GameController.Instance.GameOver(GameOverReason.Wound);
                 return;
             }
 
