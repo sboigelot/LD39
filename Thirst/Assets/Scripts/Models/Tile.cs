@@ -47,7 +47,9 @@ namespace Assets.Scripts.Models
             {
                 PrototypeName = prototype.Name,
                 AnimationName = prototype.AnimationName,
-                Health = prototype.BaseHealth
+                Health = prototype.BaseHealth,
+                Attack = prototype.Strength,
+                PortraitAnimationName = prototype.PortraitAnimationName
             };
         }
 

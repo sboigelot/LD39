@@ -151,7 +151,6 @@
         DirectionalConnectivity="URDL"
         BuildWaterCost="1"
         Frequency="0">
-    <MonsterSpawnProbability Name="Seegul" Probability="0.15"/>
   </TilePrototype>
 
   <TilePrototype Name="URL"

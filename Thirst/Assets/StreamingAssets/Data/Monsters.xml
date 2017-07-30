@@ -2,12 +2,14 @@
 
   <MonsterPrototype Name="Crab"
         AnimationName="CrabAnim"
+        PortraitAnimationName="CrabPortraitAnim"
         BaseHealth="2"
         Strength="1">
   </MonsterPrototype>
 
   <MonsterPrototype Name="Seegul"
         AnimationName="SeegulAnim"
+        PortraitAnimationName="SeegulPortraitAnim"
         BaseHealth="1"
         Strength="1">
   </MonsterPrototype>

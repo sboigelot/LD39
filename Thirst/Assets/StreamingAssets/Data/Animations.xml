@@ -42,7 +42,15 @@
     <Frame>Monsters\C3</Frame>
     <Frame>Monsters\C2</Frame>
   </AnimationPrototype>
-  
+
+  <AnimationPrototype Name="CrabPortraitAnim">
+    <Frame>Monsters\crabe</Frame>
+  </AnimationPrototype>
+
+  <AnimationPrototype Name="SeegulPortraitAnim">
+    <Frame>Monsters\mouette</Frame>
+  </AnimationPrototype>
+
   <AnimationPrototype Name="SeegulAnim"
                       FrameDelay="0.4">
     <Frame>Monsters\M1</Frame>

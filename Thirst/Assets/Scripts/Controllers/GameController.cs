@@ -72,6 +72,7 @@ namespace Assets.Scripts.Controllers
             if (my != 0 || mx != 0)
             {
                 GameManager.Instance.Level.Mermaid.Move(mx, my);
+                MonstersPanelController.Instance.RedrawMonstersSurroundingMermaid();
             }
         }
     }

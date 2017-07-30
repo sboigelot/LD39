@@ -11,6 +11,9 @@ namespace Assets.Scripts.Models
         public string AnimationName;
 
         [XmlAttribute]
+        public string PortraitAnimationName;
+
+        [XmlAttribute]
         public int BaseHealth;
 
         [XmlAttribute]

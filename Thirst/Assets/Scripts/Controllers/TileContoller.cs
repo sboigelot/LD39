@@ -132,6 +132,7 @@ namespace Assets.Scripts.Controllers
             Tile = GameManager.Instance.Level.Mermaid.UseCard(card.TileProto);
             GameManager.Instance.Level.Tiles[Y, X] = Tile;
             MapController.Instance.RedrawAround(X, Y);
+            MonstersPanelController.Instance.RedrawMonstersSurroundingMermaid();
         }
     }
 }

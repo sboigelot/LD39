@@ -13,6 +13,7 @@ namespace Assets.Scripts.Controllers
         public Slider WaterSlider;
         public Slider HealhSlider;
         public ImageAnimationController WeaponDisplay;
+        public Text AttacText;
         
         public void FixedUpdate()
         {
@@ -29,6 +30,7 @@ namespace Assets.Scripts.Controllers
             HealhSlider.maxValue = PrototypeManager.Instance.MermaidPrototype.MaxHealth;
             HealhSlider.value = HealhSlider.maxValue - mermaid.Health;
 
+            AttacText.text = "" + mermaid.Attack;
             if (string.IsNullOrEmpty(mermaid.WeaponName))
             {
                 WeaponDisplay.gameObject.SetActive(false);
@@ -40,6 +42,7 @@ namespace Assets.Scripts.Controllers
                 {
                     WeaponDisplay.AnimationName = proto.AnimationName;
                     WeaponDisplay.gameObject.SetActive(true);
+                    AttacText.text = "" + (mermaid.Attack + proto.GainAttack);
                 }
             }
         }
