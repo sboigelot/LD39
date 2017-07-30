@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Assets.Scripts.Managers;
 using Assets.Scripts.Models;
 using Assets.Scripts.UI;
@@ -43,6 +44,21 @@ namespace Assets.Scripts.Controllers
             tileController.Redraw();
             tile.GetComponent<DropZone>().StealDropParentality = false;
             return tileController;
+        }
+
+        public void RedrawAround(int xo, int yo)
+        {
+            for (int y = -1; y <= 1; y++)
+            {
+                for (int x = -1; x <= 1; x++)
+                {
+                    var tileController = TileControllers.FirstOrDefault(tc => tc.X == xo + x && tc.Y == yo + y);
+                    if (tileController != null)
+                    {
+                        tileController.Redraw();
+                    }
+                }
+            }
         }
     }
 }

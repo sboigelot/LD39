@@ -13,6 +13,7 @@ namespace Assets.Scripts.Models
         [XmlAttribute("DirectionalConnectivity")]
         public string DirectionalConnectivitySave
         {
+            get { return ""; }
             set
             {
                 DirectionalConnectivity = DirectionalConnectivity.None;

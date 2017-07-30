@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.Managers;
+﻿using System;
+using Assets.Scripts.Managers;
 using Assets.Scripts.Models;
 using Assets.Scripts.UI;
 using UnityEngine;
@@ -16,6 +17,9 @@ namespace Assets.Scripts.Controllers
 
         public ImageAnimationController OnTileDisplay;
 
+        private Image image;
+        private ImageAnimationController imageAnimationController;
+
         public void Awake()
         {
             var lg = GetComponent<HorizontalLayoutGroup>();
@@ -23,6 +27,10 @@ namespace Assets.Scripts.Controllers
             lg.childControlWidth = true;
             lg.childForceExpandHeight = true;
             lg.childForceExpandWidth = true;
+
+            image = GetComponent<Image>();
+            imageAnimationController = GetComponent<ImageAnimationController>();
+
             Redraw();
         }
 
@@ -30,13 +38,14 @@ namespace Assets.Scripts.Controllers
         {
             if (Tile == null)
             {
-                GetComponent<Image>().color = new Color(0, 0, 0, 0);
-                GetComponent<ImageAnimationController>().AnimationName = "0Anim";
+                image.color = TileIsAccessible() ? Color.white : new Color(0, 0, 0, 0);
+                imageAnimationController.AnimationName = "0Anim";
                 return;
             }
 
-            GetComponent<Image>().color = Color.white;
-            GetComponent<ImageAnimationController>().AnimationName = Tile.AnimationName;
+            image.color = Color.white;
+            imageAnimationController.AnimationName = Tile.AnimationName;
+
             OnTileDisplay = OnTileDisplay ?? CreateOnTileDisplay();
 
             if (X == GameManager.Instance.Level.Mermaid.X &&
@@ -79,6 +88,27 @@ namespace Assets.Scripts.Controllers
             }
         }
 
+        private bool TileIsAccessible()
+        {
+            if (Tile != null)
+            {
+                return true;
+            }
+            
+            var level = GameManager.Instance.Level;
+            if (level == null || level.Tiles == null)
+            {
+                return false;
+            }
+            
+            var tileConnected = level.TileExist(X - 1, Y) && !level.TileHasWallTo(X - 1, Y, X, Y) ||
+                                level.TileExist(X + 1, Y) && !level.TileHasWallTo(X + 1, Y, X, Y) ||
+                                level.TileExist(X, Y - 1) && !level.TileHasWallTo(X, Y - 1, X, Y) ||
+                                level.TileExist(X, Y + 1) && !level.TileHasWallTo(X, Y + 1, X, Y);
+
+            return tileConnected;
+        }
+
         private ImageAnimationController CreateOnTileDisplay()
         {
             var onTileDisplay = new GameObject("onTileDisplay");
@@ -94,20 +124,14 @@ namespace Assets.Scripts.Controllers
                 return;
             }
 
-            if (!CanUse(card.TileProto))
+            if (!TileIsAccessible())
             {
                 return;
             }
 
             Tile = GameManager.Instance.Level.Mermaid.UseCard(card.TileProto);
             GameManager.Instance.Level.Tiles[Y, X] = Tile;
-
-            Redraw();
-        }
-
-        private bool CanUse(string cardTileProto)
-        {
-            return true; //TODO implement tile connexion check
+            MapController.Instance.RedrawAround(X, Y);
         }
     }
 }
