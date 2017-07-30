@@ -6,6 +6,13 @@
         BaseHealth="2"
         Strength="4">
   </MonsterPrototype>
+  
+  <MonsterPrototype Name="BlueCrab"
+        AnimationName="BlueCrabAnim"
+        PortraitAnimationName="BlueCrabPortraitAnim"
+        BaseHealth="2"
+        Strength="4">
+  </MonsterPrototype>
 
   <MonsterPrototype Name="Seegul"
         AnimationName="SeegulAnim"

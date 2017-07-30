@@ -62,9 +62,21 @@
     <Frame>Monsters\C3</Frame>
     <Frame>Monsters\C2</Frame>
   </AnimationPrototype>
+  
+  <AnimationPrototype Name="BlueCrabAnim"
+                      FrameDelay="0.4">
+    <Frame>Monsters\Cb1</Frame>
+    <Frame>Monsters\Cb2</Frame>
+    <Frame>Monsters\Cb3</Frame>
+    <Frame>Monsters\Cb2</Frame>
+  </AnimationPrototype>
 
   <AnimationPrototype Name="CrabPortraitAnim">
     <Frame>Monsters\crabe</Frame>
+  </AnimationPrototype>
+  
+  <AnimationPrototype Name="BlueCrabPortraitAnim">
+    <Frame>Monsters\bluecrab</Frame>
   </AnimationPrototype>
 
   <AnimationPrototype Name="SeegulPortraitAnim">
