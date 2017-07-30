@@ -5,6 +5,7 @@ using Assets.Scripts.Models;
 using Assets.Scripts.UI;
 using Assets.Scripts.Utils;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Assets.Scripts.Controllers
 {

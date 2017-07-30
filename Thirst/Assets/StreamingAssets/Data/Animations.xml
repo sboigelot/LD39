@@ -7,16 +7,36 @@
     <Frame>Test\Test3</Frame>
   </AnimationPrototype>
 
+  <AnimationPrototype Name="FishBoneAnim">
+    <Frame>Weapon\poisson</Frame>
+  </AnimationPrototype>
+
+  <AnimationPrototype Name="SpoonAnim">
+    <Frame>Weapon\cuillere</Frame>
+  </AnimationPrototype>
+
   <AnimationPrototype Name="TridentAnim">
     <Frame>Weapon\Trident</Frame>
   </AnimationPrototype>
-  
-  <AnimationPrototype Name="SpadeAnim">
-    <Frame>Weapon\Spade</Frame>
+
+  <AnimationPrototype Name="HarponAnim">
+    <Frame>Weapon\harpon</Frame>
+  </AnimationPrototype>
+
+  <AnimationPrototype Name="WaterPuddleAnim">
+    <Frame>Items\eau</Frame>
   </AnimationPrototype>
   
   <AnimationPrototype Name="WaterBottleAnim">
     <Frame>Items\bouteille</Frame>
+  </AnimationPrototype>
+  
+  <AnimationPrototype Name="WaterBucketAnim">
+    <Frame>Items\eau-seau</Frame>
+  </AnimationPrototype>
+
+  <AnimationPrototype Name="SewerAnim">
+    <Frame>Items\exit</Frame>
   </AnimationPrototype>
   
   <AnimationPrototype Name="WaterAnim"

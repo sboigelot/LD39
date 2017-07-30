@@ -1,13 +1,23 @@
 <ArrayOfWeaponPrototype>
 
-  <WeaponPrototype Name="Trident"
-        AnimationName="TridentAnim"
+  <WeaponPrototype Name="FishBone"
+        AnimationName="FishBoneAnim"
         GainAttack="0">
   </WeaponPrototype>
-  
-  <WeaponPrototype Name="Spade"
-        AnimationName="SpadeAnim"
+
+  <WeaponPrototype Name="Spoon"
+        AnimationName="SpoonAnim"
         GainAttack="1">
   </WeaponPrototype>
   
+  <WeaponPrototype Name="Trident"
+        AnimationName="TridentAnim"
+        GainAttack="2">
+  </WeaponPrototype>
+  
+  <WeaponPrototype Name="Harpon"
+        AnimationName="HarponAnim"
+        GainAttack="3">
+  </WeaponPrototype>
+
 </ArrayOfWeaponPrototype>

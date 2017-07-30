@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 using Assets.Scripts.Managers;
 using UnityEngine;
 
@@ -10,6 +11,9 @@ namespace Assets.Scripts.Models
         public Mermaid Mermaid;
 
         public Tile[,] Tiles;
+
+        public int ExitLocationX;
+        public int ExitLocationY;
 
         public Level()
         {
@@ -26,6 +30,9 @@ namespace Assets.Scripts.Models
                 X = 7, //TODO randomize
                 Y = 3 //TODO randomize
             };
+
+            ExitLocationX = 9; //TODO randomize
+            ExitLocationY = 3; //TODO randomize
 
             Tiles[Mermaid.Y, Mermaid.X] = Mermaid.UseCard("StatupCard");
             Mermaid.DrawCards(3);

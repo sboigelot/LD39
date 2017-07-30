@@ -1,9 +1,25 @@
 <ArrayOfItemPrototype>
 
   <ItemPrototype Name="WaterBottle"
-        AnimationName="WaterBottleAnim"
-        GainHealth="2"
-        GainWater="5">
-    </ItemPrototype>
+        AnimationName="WaterPuddleAnim"
+        GainHealth="0"
+        GainWater="4">
+  </ItemPrototype>
 
+  <ItemPrototype Name="WaterBottle"
+        AnimationName="WaterBottleAnim"
+        GainHealth="3"
+        GainWater="10">
+  </ItemPrototype>
+
+  <ItemPrototype Name="WaterBottle"
+        AnimationName="WaterBucketAnim"
+        GainHealth="5"
+        GainWater="15">
+  </ItemPrototype>
+
+  <ItemPrototype Name="Sewer"
+        AnimationName="SewerAnim">
+  </ItemPrototype>
+  
 </ArrayOfItemPrototype>

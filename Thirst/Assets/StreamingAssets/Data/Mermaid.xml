@@ -2,10 +2,10 @@
 
   <MermaidPrototype 
       BaseAttack="1"  
-      BaseHealth="10"  
+      BaseHealth="20"  
       BaseWater="30"  
-      BaseWeaponName="Trident" 
-      MaxHealth="10" 
+      BaseWeaponName="FishBone" 
+      MaxHealth="20" 
       MaxWater="40" 
       AnimationName="MermaidAnim">
   </MermaidPrototype>

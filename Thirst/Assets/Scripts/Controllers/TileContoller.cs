@@ -8,7 +8,6 @@ using UnityEngine.UI;
 namespace Assets.Scripts.Controllers
 {
     [RequireComponent(typeof(ImageAnimationController))]
-    [RequireComponent(typeof(HorizontalLayoutGroup))]
     public class TileContoller : DropZone
     {
         public int Y;
@@ -22,12 +21,6 @@ namespace Assets.Scripts.Controllers
 
         public void Awake()
         {
-            var lg = GetComponent<HorizontalLayoutGroup>();
-            lg.childControlHeight = true;
-            lg.childControlWidth = true;
-            lg.childForceExpandHeight = true;
-            lg.childForceExpandWidth = true;
-
             image = GetComponent<Image>();
             imageAnimationController = GetComponent<ImageAnimationController>();
 
@@ -113,7 +106,16 @@ namespace Assets.Scripts.Controllers
         {
             var onTileDisplay = new GameObject("onTileDisplay");
             onTileDisplay.transform.SetParent(this.transform);
-            return onTileDisplay.AddComponent<ImageAnimationController>();
+
+            var imageController = onTileDisplay.AddComponent<ImageAnimationController>();
+            var rectTransform = onTileDisplay.GetComponent<RectTransform>() ?? onTileDisplay.AddComponent<RectTransform>();
+
+            rectTransform.anchorMin = new Vector2(.5f, 0);
+            rectTransform.anchorMax = new Vector2(.5f, 0);
+            rectTransform.pivot = new Vector2(.5f, 0);
+            rectTransform.anchoredPosition = new Vector2(0, 0);
+
+            return imageController;
         }
 
         public override void OnDrop(Draggable draggable)
@@ -123,7 +125,7 @@ namespace Assets.Scripts.Controllers
             {
                 return;
             }
-
+            
             if (!TileIsAccessible())
             {
                 return;
