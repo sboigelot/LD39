@@ -4,6 +4,7 @@
     {
         Thirst,
         Wound,
-        Victory
+        Victory,
+        Trap
     }
 }

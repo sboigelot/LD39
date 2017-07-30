@@ -143,8 +143,8 @@ namespace Assets.Scripts.Models
                 if (!ConsumeWater(1))
                 {
                     Debug.WriteLine("Invalid move - no more water");
-                    return;
                 }
+                return;
             }
 
             var oldPositionTile =

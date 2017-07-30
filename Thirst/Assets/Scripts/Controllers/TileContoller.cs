@@ -16,8 +16,8 @@ namespace Assets.Scripts.Controllers
 
         public ImageAnimationController OnTileDisplay;
 
-        private Image image;
-        private ImageAnimationController imageAnimationController;
+        public Image image;
+        public ImageAnimationController imageAnimationController;
 
         public void Awake()
         {
@@ -34,14 +34,17 @@ namespace Assets.Scripts.Controllers
                 return;
             }
 
-            //Cheat mode: see the exit
-            //if (X == GameManager.Instance.Level.ExitLocationX &&
-            //    Y == GameManager.Instance.Level.ExitLocationY)
-            //{
-            //    image.color = Color.white;
-            //    imageAnimationController.AnimationName = "GridAnim";
-            //    return;
-            //}
+            if (true)
+            {
+                //Cheat mode: see the exit
+                if (X == GameManager.Instance.Level.ExitLocationX &&
+                    Y == GameManager.Instance.Level.ExitLocationY)
+                {
+                    image.color = Color.white;
+                    imageAnimationController.AnimationName = "GridAnim";
+                    return;
+                }
+            }
 
             if (Tile == null)
             {
@@ -190,6 +193,7 @@ namespace Assets.Scripts.Controllers
             Tile = GameManager.Instance.Level.Mermaid.UseCard(card.TileProto);
             GameManager.Instance.Level.Tiles[Y, X] = Tile;
             MapController.Instance.RedrawAround(X, Y);
+            MapController.Instance.TestForTrappedState();
             MonstersPanelController.Instance.RedrawMonstersSurroundingMermaid();
         }
     }

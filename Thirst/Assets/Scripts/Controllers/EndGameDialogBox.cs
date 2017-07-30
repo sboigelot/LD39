@@ -28,13 +28,17 @@ namespace Assets.Scripts.Controllers
                     VictoryImage.sprite = ThirthPicture;
                     VictoryFlavorText.text = "You ran out of water and lost all your magic power...";
                     break;
+                case GameOverReason.Trap:
+                    VictoryImage.sprite = ThirthPicture;
+                    VictoryFlavorText.text = "You trapped yourself in walls away from the see...";
+                    break;
                 case GameOverReason.Wound:
                     VictoryImage.sprite = WoundPicture;
                     VictoryFlavorText.text = "Lurking monsters in the sand got the last of you...";
                     break;
                 case GameOverReason.Victory:
                     VictoryImage.sprite = EscapePicture;
-                    VictoryFlavorText.text = "You managed to escape the beach and swim fee in the see!";
+                    VictoryFlavorText.text = "You managed to escape and swim free to the see!";
                     break;
             }
         }

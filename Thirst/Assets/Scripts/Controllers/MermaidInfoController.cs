@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Assets.Scripts.Managers;
-using UnityEngine;
 using UnityEngine.UI;
 
 namespace Assets.Scripts.Controllers

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Assets.Scripts.Managers;
 using Assets.Scripts.Models;
@@ -59,6 +60,31 @@ namespace Assets.Scripts.Controllers
                         tileController.Redraw();
                     }
                 }
+            }
+        }
+
+        public void TestForTrappedState()
+        {
+            if (TileControllers.Any(tc => 
+                tc.imageAnimationController.AnimationName == "0Anim" &&
+                tc.image.color == Color.white))
+            {
+                return;
+            }
+
+            var tileControllerOfExit = TileControllers.FirstOrDefault(
+                tc =>
+                    tc.X == GameManager.Instance.Level.ExitLocationX &&
+                    tc.Y == GameManager.Instance.Level.ExitLocationY);
+
+            if (tileControllerOfExit == null)
+            {
+                return;
+            }
+
+            if (tileControllerOfExit.Tile == null)
+            {
+                GameController.Instance.GameOver(GameOverReason.Trap);
             }
         }
     }
