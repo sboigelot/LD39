@@ -34,11 +34,11 @@ namespace Assets.Scripts.Controllers
                 }
             }
         }
-
+        
         private TileContoller AddTile(int y, int x, Tile tileContent)
         {
             var tile = new GameObject(string.Format("Tile[{0},{1}]", y, x));
-            tile.transform.SetParent(this.transform);
+            tile.transform.SetParent(this.transform, false);
             var tileController = tile.AddComponent<TileContoller>();
             tileController.X = x;
             tileController.Y = y;

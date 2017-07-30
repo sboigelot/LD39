@@ -204,11 +204,10 @@
         AnimationName="URLAnim"
         DirectionalConnectivity="URL"
         BuildWaterCost="3"
-        Frequency="30000">
+        Frequency="30">
     <MonsterSpawnProbability Name="Crab" Probability="0.3"/>
-	  <!--<ItemSpawnProbability Name="WaterPuddle" Probability="0.25"/>
-    <ItemSpawnProbability Name="WaterBottle" Probability="0.25"/>-->
-    <ItemSpawnProbability Name="BonusCards" Probability="1"/>
+	  <ItemSpawnProbability Name="WaterPuddle" Probability="0.25"/>
+    <ItemSpawnProbability Name="WaterBottle" Probability="0.25"/>
 	  <WeaponSpawnProbability Name="Trident" Probability="0.30"/>
   </TilePrototype>
   

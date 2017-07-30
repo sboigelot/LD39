@@ -158,9 +158,10 @@ namespace Assets.Scripts.Controllers
         private ImageAnimationController CreateOnTileDisplay()
         {
             var onTileDisplay = new GameObject("onTileDisplay");
-            onTileDisplay.transform.SetParent(this.transform);
+            onTileDisplay.transform.SetParent(this.transform, false);
 
             var imageController = onTileDisplay.AddComponent<ImageAnimationController>();
+            imageController.GetComponent<Image>().raycastTarget = false;
             var rectTransform = onTileDisplay.GetComponent<RectTransform>() ?? onTileDisplay.AddComponent<RectTransform>();
 
             rectTransform.anchorMin = new Vector2(.5f, 0);
