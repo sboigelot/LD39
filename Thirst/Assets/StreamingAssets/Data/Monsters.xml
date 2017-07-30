@@ -3,22 +3,22 @@
   <MonsterPrototype Name="Crab"
         AnimationName="CrabAnim"
         PortraitAnimationName="CrabPortraitAnim"
-        BaseHealth="2"
-        Strength="4">
+        BaseHealth="3"
+        Strength="2">
   </MonsterPrototype>
   
   <MonsterPrototype Name="BlueCrab"
         AnimationName="BlueCrabAnim"
         PortraitAnimationName="BlueCrabPortraitAnim"
-        BaseHealth="2"
+        BaseHealth="6"
         Strength="4">
   </MonsterPrototype>
 
   <MonsterPrototype Name="Seegul"
         AnimationName="SeegulAnim"
         PortraitAnimationName="SeegulPortraitAnim"
-        BaseHealth="3"
-        Strength="1">
+        BaseHealth="4"
+        Strength="2">
   </MonsterPrototype>
   
 </ArrayOfMonsterPrototype>

@@ -135,17 +135,16 @@ namespace Assets.Scripts.Models
                 return;
             }
 
-            if (!ConsumeWater(1))
-            {
-                Debug.WriteLine("Invalid move - no more water");
-                return;
-            }
-
             if (newTile.Monster != null)
             {
                 Debug.WriteLine("Invalid move - combat monster");
                 CombatMonster(newTile);
-                return;
+
+                if (!ConsumeWater(1))
+                {
+                    Debug.WriteLine("Invalid move - no more water");
+                    return;
+                }
             }
 
             var oldPositionTile =
@@ -183,6 +182,12 @@ namespace Assets.Scripts.Models
             {
                 newPositionTile.Tile.TakeWeapon();
                 newPositionTile.Tile.TakeItem();
+            }
+
+            if (!ConsumeWater(1))
+            {
+                Debug.WriteLine("Invalid move - no more water");
+                return;
             }
 
             newPositionTile.Redraw();

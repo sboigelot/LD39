@@ -11,6 +11,12 @@
         GainHealth="3"
         GainWater="10">
   </ItemPrototype>
+  
+  <ItemPrototype Name="LifeBottle"
+        AnimationName="LifeBottleAnim"
+        GainHealth="10"
+        GainWater="0">
+  </ItemPrototype>
 
   <ItemPrototype Name="WaterBucket"
         AnimationName="WaterBucketAnim"

@@ -31,6 +31,10 @@
     <Frame>Items\bouteille</Frame>
   </AnimationPrototype>
   
+  <AnimationPrototype Name="LifeBottleAnim">
+    <Frame>Items\bouteillevie</Frame>
+  </AnimationPrototype>
+  
   <AnimationPrototype Name="WaterBucketAnim">
     <Frame>Items\eau-seau</Frame>
   </AnimationPrototype>

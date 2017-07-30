@@ -176,7 +176,12 @@ namespace Assets.Scripts.Controllers
             {
                 return;
             }
-            
+
+            if (Tile != null)
+            {
+                return;
+            }
+
             if (!TileIsAccessible())
             {
                 return;
