@@ -1,6 +1,6 @@
 <ArrayOfItemPrototype>
 
-  <ItemPrototype Name="WaterBottle"
+  <ItemPrototype Name="WaterPuddle"
         AnimationName="WaterPuddleAnim"
         GainHealth="0"
         GainWater="4">
@@ -12,7 +12,7 @@
         GainWater="10">
   </ItemPrototype>
 
-  <ItemPrototype Name="WaterBottle"
+  <ItemPrototype Name="WaterBucket"
         AnimationName="WaterBucketAnim"
         GainHealth="5"
         GainWater="15">

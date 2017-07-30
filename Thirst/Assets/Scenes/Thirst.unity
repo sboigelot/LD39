@@ -796,7 +796,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &230259379
 RectTransform:
   m_ObjectHideFlags: 0
@@ -828,7 +828,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.2647059, g: 0.2647059, b: 0.2647059, a: 0.49019608}
+  m_Color: {r: 0.9632353, g: 0.84200054, b: 0.44620463, a: 0.684}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -862,9 +862,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   VictoryImage: {fileID: 810361798}
   VictoryFlavorText: {fileID: 901225202}
-  ThirthPicture: {fileID: 21300000, guid: 525025c93cab23441baac2743242dabe, type: 3}
+  ThirthPicture: {fileID: 21300000, guid: 9bd5fd06a58a89240ab014cb158d6b73, type: 3}
   WoundPicture: {fileID: 21300000, guid: 525025c93cab23441baac2743242dabe, type: 3}
-  EscapePicture: {fileID: 21300000, guid: 525025c93cab23441baac2743242dabe, type: 3}
+  EscapePicture: {fileID: 21300000, guid: a6e900c54e103c044ab1ca616970ed5a, type: 3}
 --- !u!1 &272955142
 GameObject:
   m_ObjectHideFlags: 0

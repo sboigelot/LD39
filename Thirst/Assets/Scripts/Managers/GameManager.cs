@@ -22,7 +22,6 @@ namespace Assets.Scripts.Managers
         public void GameOver(GameOverReason reason)
         {
             StopLevel();
-            //TODO
         }
     }
 }

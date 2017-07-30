@@ -15,6 +15,7 @@ namespace Assets.Scripts.Controllers
             }
 
             GameManager.Instance.Level.Mermaid.BinCard(card.TileProto);
+            HandPanelController.Instance.Redraw();
         }
     }
 }

@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Security.Cryptography.X509Certificates;
 using Assets.Scripts.Managers;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Assets.Scripts.Models
 {
@@ -12,12 +12,16 @@ namespace Assets.Scripts.Models
 
         public Tile[,] Tiles;
 
+        public int StartLocationX;
+        public int StartLocationY;
         public int ExitLocationX;
         public int ExitLocationY;
 
         public Level()
         {
             Tiles = new Tile[9, 14];
+
+            RandomizeStartAndExitLocation();
 
             var protoMermaid = PrototypeManager.Instance.MermaidPrototype;
             Mermaid = new Mermaid
@@ -27,15 +31,26 @@ namespace Assets.Scripts.Models
                 Attack = protoMermaid.BaseAttack,
                 WaterLevel = protoMermaid.BaseWater,
                 WeaponName = protoMermaid.BaseWeaponName,
-                X = 7, //TODO randomize
-                Y = 3 //TODO randomize
+                X = StartLocationX,
+                Y = StartLocationY
             };
-
-            ExitLocationX = 9; //TODO randomize
-            ExitLocationY = 3; //TODO randomize
 
             Tiles[Mermaid.Y, Mermaid.X] = Mermaid.UseCard("StatupCard");
             Mermaid.DrawCards(3);
+        }
+
+        private void RandomizeStartAndExitLocation()
+        {
+            do
+            {
+                StartLocationX = Random.Range(0,14);
+                StartLocationY = Random.Range(0, 9);
+                ExitLocationX = Random.Range(0, 14);
+                ExitLocationY = Random.Range(0, 9);
+            } while (
+                Vector2.Distance(
+                    new Vector2(StartLocationX, StartLocationY), 
+                    new Vector2(ExitLocationX, ExitLocationY)) <= 6);
         }
 
         public bool TileExist(int x, int y)

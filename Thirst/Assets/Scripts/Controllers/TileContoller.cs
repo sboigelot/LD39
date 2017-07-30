@@ -34,6 +34,15 @@ namespace Assets.Scripts.Controllers
                 return;
             }
 
+            //Cheat mode: see the exit
+            //if (X == GameManager.Instance.Level.ExitLocationX &&
+            //    Y == GameManager.Instance.Level.ExitLocationY)
+            //{
+            //    image.color = Color.white;
+            //    imageAnimationController.AnimationName = "GridAnim";
+            //    return;
+            //}
+
             if (Tile == null)
             {
                 if (X == GameManager.Instance.Level.ExitLocationX &&
