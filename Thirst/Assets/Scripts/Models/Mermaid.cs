@@ -126,9 +126,15 @@ namespace Assets.Scripts.Models
                 Debug.WriteLine("Invalid move - no tile");
                 return;
             }
-
-            //TODO Check if tiles are connected
             
+            var level = GameManager.Instance.Level;
+            if (level.TileHasWallTo(X, Y, newX, newY) ||
+                level.TileHasWallTo(newX, newY, X, Y))
+            {
+                Debug.WriteLine("Invalid move - wall");
+                return;
+            }
+
             if (!ConsumeWater(1))
             {
                 Debug.WriteLine("Invalid move - no more water");
