@@ -23,5 +23,10 @@
         GainHealth="5"
         GainWater="15">
   </ItemPrototype>
+
+  <ItemPrototype Name="BonusCards"
+        AnimationName="BonusCardsAnim"
+        GainCard="2">
+  </ItemPrototype>
   
 </ArrayOfItemPrototype>

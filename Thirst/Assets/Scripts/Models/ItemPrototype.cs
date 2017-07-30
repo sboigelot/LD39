@@ -15,5 +15,8 @@ namespace Assets.Scripts.Models
 
         [XmlAttribute]
         public int GainWater;
+
+        [XmlAttribute]
+        public int GainCard;
     }
 }

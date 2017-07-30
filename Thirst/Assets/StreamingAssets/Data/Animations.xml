@@ -42,6 +42,10 @@
   <AnimationPrototype Name="SewerAnim">
     <Frame>Items\exit</Frame>
   </AnimationPrototype>
+
+  <AnimationPrototype Name="BonusCardsAnim">
+    <Frame>Items\bonuscards</Frame>
+  </AnimationPrototype>
   
   <AnimationPrototype Name="WaterAnim"
                       FrameDelay="0.25">
@@ -94,6 +98,31 @@
     <Frame>Monsters\M3</Frame>
     <Frame>Monsters\M2</Frame>
   </AnimationPrototype>
+
+  <AnimationPrototype Name="CrocoPortraitAnim">
+    <Frame>Monsters\croco</Frame>
+  </AnimationPrototype>
+
+  <AnimationPrototype Name="CrocoAnim"
+                      FrameDelay="0.4">
+    <Frame>Monsters\croco-1</Frame>
+    <Frame>Monsters\croco-2</Frame>
+    <Frame>Monsters\croco-3</Frame>
+    <Frame>Monsters\croco-2</Frame>
+  </AnimationPrototype>
+
+  <AnimationPrototype Name="FrogPortraitAnim">
+    <Frame>Monsters\grenouille</Frame>
+  </AnimationPrototype>
+
+  <AnimationPrototype Name="FrogAnim"
+                      FrameDelay="0.4">
+    <Frame>Monsters\G-1</Frame>
+    <Frame>Monsters\G-2</Frame>
+    <Frame>Monsters\G-3</Frame>
+    <Frame>Monsters\G-2</Frame>
+  </AnimationPrototype>
+
 
   <AnimationPrototype Name="SDAnim"
                       FrameDelay="0.25">

@@ -6,13 +6,15 @@
         BuildWaterCost="1"
         Frequency="3">
     <ItemSpawnProbability Name="WaterBottle" Probability="0.125"/>
-	<ItemSpawnProbability Name="LifeBottle" Probability="0.125"/>
+	  <ItemSpawnProbability Name="LifeBottle" Probability="0.125"/>
     <MonsterSpawnProbability Name="Goat" Probability="0"/>
     <WeaponSpawnProbability Name="Trident" Probability="0"/>
     <WeaponSpawnProbability Name="Harpon" Probability="0"/>
-	<ItemSpawnProbability Name="WaterPuddle" Probability="0.15"/>
-	 <MonsterSpawnProbability Name="BlueCrab" Probability="0.25"/>
-	 <ItemSpawnProbability Name="WaterBucket" Probability="0.15"/>
+	  <ItemSpawnProbability Name="WaterPuddle" Probability="0.15"/>
+	  <MonsterSpawnProbability Name="BlueCrab" Probability="0.25"/>
+	  <ItemSpawnProbability Name="WaterBucket" Probability="0.15"/>
+    <MonsterSpawnProbability Name="Croco" Probability="0.3"/>
+    <MonsterSpawnProbability Name="Frog" Probability="0.3"/>
   </TilePrototype>-->
   
   <TilePrototype Name="0"
@@ -20,8 +22,7 @@
         DirectionalConnectivity=""
         BuildWaterCost="1"
         Frequency="0">
-   
-	  </TilePrototype>
+  </TilePrototype>
 
   <TilePrototype Name="D"
         AnimationName="DAnim"
@@ -29,14 +30,13 @@
         BuildWaterCost="1"
         Frequency="15">
     <MonsterSpawnProbability Name="Seegul" Probability="0.15"/>
-	<MonsterSpawnProbability Name="BlueCrab" Probability="0.15"/>
+	  <MonsterSpawnProbability Name="BlueCrab" Probability="0.15"/>
     <WeaponSpawnProbability Name="FishBone" Probability="0.10"/>
     <WeaponSpawnProbability Name="Spoon" Probability="0.20"/>
     <WeaponSpawnProbability Name="Trident" Probability="0.20"/>
     <WeaponSpawnProbability Name="Harpon" Probability="0.10"/>
-	<ItemSpawnProbability Name="WaterPuddle" Probability="0.25"/>
-	<ItemSpawnProbability Name="WaterBottle" Probability="0.125"/>
-	
+	  <ItemSpawnProbability Name="WaterPuddle" Probability="0.25"/>
+	  <ItemSpawnProbability Name="WaterBottle" Probability="0.125"/>
   </TilePrototype>
 
   <TilePrototype Name="DL"
@@ -45,9 +45,9 @@
         BuildWaterCost="2"
         Frequency="30">
     <MonsterSpawnProbability Name="Crab" Probability="0.25"/>
-	<ItemSpawnProbability Name="WaterPuddle" Probability="0.25"/>
-	<ItemSpawnProbability Name="WaterBottle" Probability="0.15"/>
-	<ItemSpawnProbability Name="LifeBottle" Probability="0.125"/>
+	  <ItemSpawnProbability Name="WaterPuddle" Probability="0.25"/>
+	  <ItemSpawnProbability Name="WaterBottle" Probability="0.15"/>
+	  <ItemSpawnProbability Name="LifeBottle" Probability="0.125"/>
 	<WeaponSpawnProbability Name="Trident" Probability="0.30"/>
 	
   </TilePrototype>
@@ -61,8 +61,8 @@
     <WeaponSpawnProbability Name="Spoon" Probability="0.20"/>
     <WeaponSpawnProbability Name="Trident" Probability="0.20"/>
     <WeaponSpawnProbability Name="Harpon" Probability="0.10"/>
-	<ItemSpawnProbability Name="WaterPuddle" Probability="0.25"/>
-	<ItemSpawnProbability Name="WaterBottle" Probability="0.15"/>
+	  <ItemSpawnProbability Name="WaterPuddle" Probability="0.25"/>
+	  <ItemSpawnProbability Name="WaterBottle" Probability="0.15"/>
   </TilePrototype>
 
   <TilePrototype Name="R"
@@ -71,7 +71,7 @@
         BuildWaterCost="1"
         Frequency="15">
     <MonsterSpawnProbability Name="Crab" Probability="0.25"/>
-	<MonsterSpawnProbability Name="BlueCrab" Probability="0.15"/>
+  	<MonsterSpawnProbability Name="BlueCrab" Probability="0.15"/>
     <WeaponSpawnProbability Name="FishBone" Probability="0.10"/>
     <WeaponSpawnProbability Name="Spoon" Probability="0.20"/>
     <WeaponSpawnProbability Name="Trident" Probability="0.20"/>
@@ -86,10 +86,10 @@
         BuildWaterCost="2"
         Frequency="30">
     <MonsterSpawnProbability Name="Seegul" Probability="0.25"/>
-	<MonsterSpawnProbability Name="Crab" Probability="0.25"/>
-	<ItemSpawnProbability Name="WaterBucket" Probability="0.20"/>
-	<ItemSpawnProbability Name="WaterPuddle" Probability="0.35"/>
-	<WeaponSpawnProbability Name="Trident" Probability="0.20"/>
+	  <MonsterSpawnProbability Name="Crab" Probability="0.25"/>
+	  <ItemSpawnProbability Name="WaterBucket" Probability="0.20"/>
+	  <ItemSpawnProbability Name="WaterPuddle" Probability="0.35"/>
+	  <WeaponSpawnProbability Name="Trident" Probability="0.20"/>
   </TilePrototype>
 
   <TilePrototype Name="RDL"
@@ -98,12 +98,12 @@
         BuildWaterCost="3"
         Frequency="30">
     <MonsterSpawnProbability Name="Crab" Probability="0.25"/>
-	<MonsterSpawnProbability Name="BlueCrab" Probability="0.15"/>
+	  <MonsterSpawnProbability Name="BlueCrab" Probability="0.15"/>
     <MonsterSpawnProbability Name="Seegul" Probability="0.20"/>
-	<ItemSpawnProbability Name="WaterPuddle" Probability="0.25"/>
-	<ItemSpawnProbability Name="WaterBottle" Probability="0.15"/>
-	<ItemSpawnProbability Name="LifeBottle" Probability="0.15"/>
-	<WeaponSpawnProbability Name="Trident" Probability="0.20"/>
+	  <ItemSpawnProbability Name="WaterPuddle" Probability="0.25"/>
+	  <ItemSpawnProbability Name="WaterBottle" Probability="0.15"/>
+	  <ItemSpawnProbability Name="LifeBottle" Probability="0.15"/>
+	  <WeaponSpawnProbability Name="Trident" Probability="0.20"/>
   </TilePrototype>
 
   <TilePrototype Name="RL"
@@ -112,10 +112,10 @@
         BuildWaterCost="2"
         Frequency="30">
     <MonsterSpawnProbability Name="BlueCrab" Probability="0.25"/>
-	<ItemSpawnProbability Name="WaterPuddle" Probability="0.25"/>
-	<ItemSpawnProbability Name="WaterBottle" Probability="0.15"/>
-	<WeaponSpawnProbability Name="Spoon" Probability="0.30"/>
-	<WeaponSpawnProbability Name="Harpon" Probability="0.10"/>
+	  <ItemSpawnProbability Name="WaterPuddle" Probability="0.25"/>
+	  <ItemSpawnProbability Name="WaterBottle" Probability="0.15"/>
+	  <WeaponSpawnProbability Name="Spoon" Probability="0.30"/>
+	  <WeaponSpawnProbability Name="Harpon" Probability="0.10"/>
   </TilePrototype>
 
   <TilePrototype Name="U"
@@ -128,7 +128,7 @@
     <WeaponSpawnProbability Name="Spoon" Probability="0.30"/>
     <WeaponSpawnProbability Name="Trident" Probability="0.20"/>
     <WeaponSpawnProbability Name="Harpon" Probability="0.10"/>
-	<ItemSpawnProbability Name="WaterBottle" Probability="0.35"/>
+	  <ItemSpawnProbability Name="WaterBottle" Probability="0.35"/>
   </TilePrototype>
 
   <TilePrototype Name="UD"
@@ -137,9 +137,9 @@
         BuildWaterCost="2"
         Frequency="30">
     <MonsterSpawnProbability Name="Seegul" Probability="0.15"/>
-	<MonsterSpawnProbability Name="Crab" Probability="0.25"/>
-	<MonsterSpawnProbability Name="BlueCrab" Probability="0.25"/>
-	<ItemSpawnProbability Name="WaterBottle" Probability="0.25"/>
+	  <MonsterSpawnProbability Name="Crab" Probability="0.25"/>
+	  <MonsterSpawnProbability Name="BlueCrab" Probability="0.25"/>
+	  <ItemSpawnProbability Name="WaterBottle" Probability="0.25"/>
   </TilePrototype>
 
   <TilePrototype Name="UDL"
@@ -148,10 +148,10 @@
         BuildWaterCost="3"
         Frequency="30">
     <MonsterSpawnProbability Name="Crab" Probability="0.25"/>
-	<ItemSpawnProbability Name="WaterBucket" Probability="0.10"/>
-	<ItemSpawnProbability Name="WaterBottle" Probability="0.15"/>
-	<ItemSpawnProbability Name="LifeBottle" Probability="0.10"/>
-	<WeaponSpawnProbability Name="Harpon" Probability="0.10"/>
+	  <ItemSpawnProbability Name="WaterBucket" Probability="0.10"/>
+	  <ItemSpawnProbability Name="WaterBottle" Probability="0.15"/>
+	  <ItemSpawnProbability Name="LifeBottle" Probability="0.10"/>
+	  <WeaponSpawnProbability Name="Harpon" Probability="0.10"/>
   </TilePrototype>
 
   <TilePrototype Name="UL"
@@ -160,8 +160,8 @@
         BuildWaterCost="2"
         Frequency="30">
     <MonsterSpawnProbability Name="Seegul" Probability="0.15"/>
-	<MonsterSpawnProbability Name="Crab" Probability="0.25"/>
-	<ItemSpawnProbability Name="WaterBottle" Probability="0.25"/>
+	  <MonsterSpawnProbability Name="Crab" Probability="0.25"/>
+	  <ItemSpawnProbability Name="WaterBottle" Probability="0.25"/>
   </TilePrototype>
 
   <TilePrototype Name="UR"
@@ -170,9 +170,9 @@
         BuildWaterCost="2"
         Frequency="30">
     <MonsterSpawnProbability Name="Seegul" Probability="0.15"/>
-	<MonsterSpawnProbability Name="Crab" Probability="0.25"/>
-	<ItemSpawnProbability Name="WaterBottle" Probability="0.25"/>
-	<WeaponSpawnProbability Name="Harpon" Probability="0.10"/>
+	  <MonsterSpawnProbability Name="Crab" Probability="0.25"/>
+	  <ItemSpawnProbability Name="WaterBottle" Probability="0.25"/>
+	  <WeaponSpawnProbability Name="Harpon" Probability="0.10"/>
   </TilePrototype>
 
   <TilePrototype Name="URD"
@@ -181,8 +181,8 @@
         BuildWaterCost="3"
         Frequency="30">
     <MonsterSpawnProbability Name="Crab" Probability="0.25"/>
-	<ItemSpawnProbability Name="WaterBottle" Probability="0.25"/>
-	<ItemSpawnProbability Name="LifeBottle" Probability="0.15"/>
+	  <ItemSpawnProbability Name="WaterBottle" Probability="0.25"/>
+	  <ItemSpawnProbability Name="LifeBottle" Probability="0.15"/>
   </TilePrototype>
 
   <TilePrototype Name="URDL"
@@ -190,28 +190,28 @@
         DirectionalConnectivity="URDL"
         BuildWaterCost="5"
         Frequency="20">
-    
     <WeaponSpawnProbability Name="Spoon" Probability="0.35"/>
     <WeaponSpawnProbability Name="Trident" Probability="0.20"/>
-	<WeaponSpawnProbability Name="Harpon" Probability="0.10"/>
-	<ItemSpawnProbability Name="WaterBottle" Probability="0.35"/>
-	<ItemSpawnProbability Name="WaterBucket" Probability="0.20"/>
-	<ItemSpawnProbability Name="LifeBottle" Probability="0.25"/>
-	<MonsterSpawnProbability Name="Crab" Probability="0.20"/>
-	<MonsterSpawnProbability Name="Seegul" Probability="0.20"/>
+	  <WeaponSpawnProbability Name="Harpon" Probability="0.10"/>
+	  <ItemSpawnProbability Name="WaterBottle" Probability="0.35"/>
+	  <ItemSpawnProbability Name="WaterBucket" Probability="0.20"/>
+	  <ItemSpawnProbability Name="LifeBottle" Probability="0.25"/>
+	  <MonsterSpawnProbability Name="Crab" Probability="0.20"/>
+	  <MonsterSpawnProbability Name="Seegul" Probability="0.20"/>
   </TilePrototype>
 
   <TilePrototype Name="URL"
         AnimationName="URLAnim"
         DirectionalConnectivity="URL"
         BuildWaterCost="3"
-        Frequency="30">
+        Frequency="30000">
     <MonsterSpawnProbability Name="Crab" Probability="0.3"/>
-	<ItemSpawnProbability Name="WaterPuddle" Probability="0.25"/>
-	<ItemSpawnProbability Name="WaterBottle" Probability="0.25"/>
-	<WeaponSpawnProbability Name="Trident" Probability="0.30"/>
+	  <!--<ItemSpawnProbability Name="WaterPuddle" Probability="0.25"/>
+    <ItemSpawnProbability Name="WaterBottle" Probability="0.25"/>-->
+    <ItemSpawnProbability Name="BonusCards" Probability="1"/>
+	  <WeaponSpawnProbability Name="Trident" Probability="0.30"/>
   </TilePrototype>
-
+  
   <TilePrototype Name="StatupCard"
         AnimationName="URDLAnim"
         DirectionalConnectivity="URDL"

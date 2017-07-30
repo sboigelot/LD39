@@ -1,5 +1,4 @@
-﻿using System;
-using Assets.Scripts.Managers;
+﻿using Assets.Scripts.Managers;
 using Assets.Scripts.Models;
 using Assets.Scripts.UI;
 using UnityEngine;
@@ -34,7 +33,7 @@ namespace Assets.Scripts.Controllers
                 return;
             }
 
-            if (true)
+            if (false)
             {
                 //Cheat mode: see the exit
                 if (X == GameManager.Instance.Level.ExitLocationX &&

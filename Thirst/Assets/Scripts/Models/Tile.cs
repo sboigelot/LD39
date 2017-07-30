@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using Assets.Scripts.Controllers;
 using Assets.Scripts.Managers;
 using Random = UnityEngine.Random;
 
@@ -155,6 +156,12 @@ namespace Assets.Scripts.Models
             mermaid.Health = Math.Min(
                             PrototypeManager.Instance.MermaidPrototype.MaxHealth,
                             mermaid.Health + proto.GainHealth);
+
+            if (proto.GainCard > 0)
+            {
+                mermaid.DrawCards(mermaid.CardsInHand.Count + proto.GainCard);
+                HandPanelController.Instance.Redraw();
+            }
         }
     }
 }

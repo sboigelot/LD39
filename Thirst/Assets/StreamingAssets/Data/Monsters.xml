@@ -20,5 +20,19 @@
         BaseHealth="4"
         Strength="2">
   </MonsterPrototype>
+
+  <MonsterPrototype Name="Croco"
+        AnimationName="CrocoAnim"
+        PortraitAnimationName="CrocoPortraitAnim"
+        BaseHealth="6"
+        Strength="4">
+  </MonsterPrototype>
+
+  <MonsterPrototype Name="Frog"
+        AnimationName="FrogAnim"
+        PortraitAnimationName="FrogPortraitAnim"
+        BaseHealth="2"
+        Strength="1">
+  </MonsterPrototype>
   
 </ArrayOfMonsterPrototype>

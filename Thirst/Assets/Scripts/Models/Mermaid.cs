@@ -28,7 +28,8 @@ namespace Assets.Scripts.Models
 
         public void DrawCards(int upToHandCount)
         {
-            while (CardsInHand.Count < upToHandCount)
+            while (CardsInHand.Count < upToHandCount &&
+                   CardsInHand.Count <= 5)
             {
                 DrawCard();
             }
