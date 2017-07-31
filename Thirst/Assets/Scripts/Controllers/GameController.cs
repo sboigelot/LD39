@@ -18,6 +18,7 @@ namespace Assets.Scripts.Controllers
         public GameObject AttackAnimImage;
         public GameObject SewerEnterAnimImage;
         public GameObject SewerExitAnimImage;
+        public Slider SoundEffectSlider;
 
         public AudioClip Explosion;
         public AudioClip Loose;
@@ -205,11 +206,10 @@ namespace Assets.Scripts.Controllers
 
         public void PlaySound(AudioClip sound)
         {
-            var slider = GameObject.Find("SoundEffectSlider");
-            var volume = 0.25f;
-            if (slider != null)
+            float volume = 0.25f;
+            if (SoundEffectSlider != null)
             {
-                volume = slider.GetComponent<Slider>().value;
+                volume = SoundEffectSlider.GetComponent<Slider>().value;
             }
 
             var audioSource = GetComponent<AudioSource>();
