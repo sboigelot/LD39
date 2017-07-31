@@ -70,7 +70,7 @@ namespace Assets.Scripts.UI
         public void OnEndDrag(PointerEventData eventData)
         {
             this.transform.SetParent(parentToReturnTo);
-            this.transform.SetSiblingIndex(placeHolder.transform.GetSiblingIndex());
+            this.transform.SetSiblingIndex(placeHolder == null ? 0 : placeHolder.transform.GetSiblingIndex());
             var cg = this.GetComponent<CanvasGroup>();
             if (cg != null)
             {

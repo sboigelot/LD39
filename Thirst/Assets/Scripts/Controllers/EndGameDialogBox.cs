@@ -28,6 +28,7 @@ namespace Assets.Scripts.Controllers
                     VictoryImage.sprite = ThirthPicture;
                     VictoryFlavorText.text = "You ran out of water and lost all your magic power...";
                     GameController.Instance.PlaySound(GameController.Instance.Loose);
+                    MermaidInfoController.Instance.TopWater();
                     break;
                 case GameOverReason.Trap:
                     VictoryImage.sprite = ThirthPicture;
@@ -38,6 +39,7 @@ namespace Assets.Scripts.Controllers
                     VictoryImage.sprite = WoundPicture;
                     VictoryFlavorText.text = "Lurking monsters in the sand got the last of you...";
                     GameController.Instance.PlaySound(GameController.Instance.Loose);
+                    MermaidInfoController.Instance.TopHealth();
                     break;
                 case GameOverReason.Victory:
                     VictoryImage.sprite = EscapePicture;

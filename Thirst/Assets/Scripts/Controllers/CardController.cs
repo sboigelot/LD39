@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Assets.Scripts.UI;
+﻿using Assets.Scripts.UI;
+using UnityEngine;
 
 namespace Assets.Scripts.Controllers
 {

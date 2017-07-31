@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.Managers;
+﻿using System.Collections;
+using Assets.Scripts.Managers;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,49 +12,64 @@ namespace Assets.Scripts.Controllers
         public GameObject Card3;
         public GameObject Card4;
         public GameObject Card5;
-
-        public void ScanClick()
-        {
-        }
-
-        public void CardClick(int index)
-        {
-        }
-
+        
         public void Redraw()
         {
-            DrawCard(Card1, 0);
-            DrawCard(Card2, 1);
-            DrawCard(Card3, 2);
-            DrawCard(Card4, 3);
-            DrawCard(Card5, 4);
+            StartCoroutine(RedrawCoroutine());
         }
 
-        private void DrawCard(GameObject cardHolder, int cardIndex)
+        private IEnumerator RedrawCoroutine()
         {
+            yield return new WaitForSeconds(0.1f);
+            UpdateCard(Card1, 0);
+            UpdateCard(Card2, 1);
+            UpdateCard(Card3, 2);
+            UpdateCard(Card4, 3);
+            UpdateCard(Card5, 4);
+        }
+
+        private IEnumerator HideCard(GameObject cardHolder)
+        {
+            yield return new WaitForSeconds(0.1f);
             cardHolder.SetActive(false);
+        }
+
+        private void UpdateCard(GameObject cardHolder, int cardIndex)
+        {
+            if (DrawCard(cardHolder, cardIndex))
+            {
+                cardHolder.SetActive(true);
+            }
+            else
+            {
+                StartCoroutine(HideCard(cardHolder));
+            }
+        }
+
+        private bool DrawCard(GameObject cardHolder, int cardIndex)
+        {
             if (GameManager.Instance.Level == null)
             {
-                return;
+                return false;
             }
 
             var imageAnimationController = cardHolder.GetComponent<ImageAnimationController>();
             if (GameManager.Instance.Level.Mermaid.CardsInHand.Count <= cardIndex)
             {
-                return;
+                return false;
             }
 
             var tileProtoName = GameManager.Instance.Level.Mermaid.CardsInHand[cardIndex];
             cardHolder.GetComponent<CardController>().TileProto = tileProtoName;
             var tileProto = PrototypeManager.FindTilePrototype(tileProtoName);
             imageAnimationController.AnimationName = tileProto == null ? "0Anim" : tileProto.AnimationName;
-            cardHolder.SetActive(true);
 
             var text = cardHolder.GetComponentInChildren<Text>();
             if (text != null)
             {
                 text.text = "-" + tileProto.BuildWaterCost;
             }
+            return true;
         }
     }
 }

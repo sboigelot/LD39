@@ -13,7 +13,17 @@ namespace Assets.Scripts.Controllers
         public Slider HealhSlider;
         public ImageAnimationController WeaponDisplay;
         public Text AttacText;
-        
+
+        public void TopWater()
+        {
+            WaterSlider.value = WaterSlider.maxValue;
+        }
+
+        public void TopHealth()
+        {
+            HealhSlider.value = HealhSlider.maxValue;
+        }
+
         public void FixedUpdate()
         {
             if (GameManager.Instance.Level == null)

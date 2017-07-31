@@ -13,10 +13,10 @@ namespace Assets.Scripts.UI
             var d = eventData.pointerDrag.GetComponent<Draggable>();
             if (d != null)
             {
-                if (StealDropParentality)
-                {
-                    d.parentToReturnTo = transform;
-                }
+                //if (StealDropParentality)
+                //{
+                //    d.parentToReturnTo = transform;
+                //}
                 OnDrop(d);
             }
         }
