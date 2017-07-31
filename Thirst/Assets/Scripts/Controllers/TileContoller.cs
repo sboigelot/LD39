@@ -35,7 +35,7 @@ namespace Assets.Scripts.Controllers
                 return;
             }
 
-            if (true)
+            if (false)
             {
                 //Cheat mode: see the exit
                 if (X == GameManager.Instance.Level.ExitLocationX &&
