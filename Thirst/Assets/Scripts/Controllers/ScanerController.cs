@@ -50,6 +50,8 @@ namespace Assets.Scripts.Controllers
 
             destinationRotationZ = actualDegree;
             timeSinceLastTest = 0;
+
+            GameController.Instance.PlaySound(GameController.Instance.Scan);
         }
 
         public void Update()

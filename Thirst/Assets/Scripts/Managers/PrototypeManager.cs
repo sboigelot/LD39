@@ -92,6 +92,12 @@ namespace Assets.Scripts.Managers
 
         public static AnimationPrototype FindAnimationPrototype(string name)
         {
+            if (Instance == null || Instance.AnimationPrototypes == null)
+            {
+                Debug.LogWarning("PrototypeManager called before being loaded for: " + name);
+                return null;
+            }
+
             var proto = Instance.AnimationPrototypes.FirstOrDefault(r => r.Name == name);
             if (proto == null)
             {

@@ -148,6 +148,8 @@ namespace Assets.Scripts.Models
                 return;
             }
 
+            GameController.Instance.PlaySound(GameController.Instance.Move);
+
             var oldPositionTile =
                 MapController.
                 Instance.
@@ -255,7 +257,7 @@ namespace Assets.Scripts.Models
                 return;
             }
 
-            GameController.Instance.PlaySound(GameController.Instance.Shoot);
+            GameController.Instance.PlaySound(GameController.Instance.Garbage);
             Discard(cardName);
             DrawCards(3);
         }

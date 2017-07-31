@@ -48,7 +48,7 @@ namespace Assets.Scripts.Models
                 return;
             }
 
-            GameController.Instance.PlaySound(GameController.Instance.Birds);
+            GameController.Instance.PlaySound(GameController.Instance.Popup);
             Monster = new Monster
             {
                 PrototypeName = prototype.Name,
@@ -89,7 +89,7 @@ namespace Assets.Scripts.Models
                 return;
             }
 
-            GameController.Instance.PlaySound(GameController.Instance.Weapon);
+            GameController.Instance.PlaySound(GameController.Instance.Popup);
             Weapon = prototype.Name;
         }
 
@@ -123,7 +123,7 @@ namespace Assets.Scripts.Models
                 return;
             }
 
-            GameController.Instance.PlaySound(GameController.Instance.WateDrop);
+            GameController.Instance.PlaySound(GameController.Instance.Popup);
             Item = prototype.Name;
         }
 
@@ -133,9 +133,7 @@ namespace Assets.Scripts.Models
             {
                 return;
             }
-
-            GameController.Instance.PlaySound(GameController.Instance.Weapon);
-
+            
             var mermaid = GameManager.Instance.Level.Mermaid;
             mermaid.WeaponName = Weapon;
             Weapon = null;
@@ -155,7 +153,10 @@ namespace Assets.Scripts.Models
                 return;
             }
 
-            GameController.Instance.PlaySound(GameController.Instance.Drink);
+            if (proto.GainHealth > 0 || proto.GainWater > 0)
+            {
+                GameController.Instance.PlaySound(GameController.Instance.Drink);
+            }
 
             var mermaid = GameManager.Instance.Level.Mermaid;
             mermaid.WaterLevel = Math.Min(

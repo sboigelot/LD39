@@ -1,12 +1,5 @@
 <ArrayOfAnimationPrototype>
-
-  <AnimationPrototype Name="TestAnim"
-                      FrameDelay="0.8">
-    <Frame>Test\Test1</Frame>
-    <Frame>Test\Test2</Frame>
-    <Frame>Test\Test3</Frame>
-  </AnimationPrototype>
-
+  
   <AnimationPrototype Name="FishBoneAnim">
     <Frame>Weapon\poisson</Frame>
   </AnimationPrototype>
@@ -73,10 +66,10 @@
   
   <AnimationPrototype Name="BlueCrabAnim"
                       FrameDelay="0.4">
-    <Frame>Monsters\Cb1</Frame>
-    <Frame>Monsters\Cb2</Frame>
-    <Frame>Monsters\Cb3</Frame>
-    <Frame>Monsters\Cb2</Frame>
+    <Frame>Monsters\cb1</Frame>
+    <Frame>Monsters\cb2</Frame>
+    <Frame>Monsters\cb3</Frame>
+    <Frame>Monsters\cb2</Frame>
   </AnimationPrototype>
 
   <AnimationPrototype Name="CrabPortraitAnim">
@@ -224,10 +217,6 @@
         FrameDelay="0.60">
     <Frame>Tiles\grid</Frame>
     <Frame>Tiles\empty</Frame>
-  </AnimationPrototype>
-
-  <AnimationPrototype Name="SewerAnim">
-    <Frame>Tiles\exit</Frame>
   </AnimationPrototype>
 
   <AnimationPrototype Name="AttackAnim" 

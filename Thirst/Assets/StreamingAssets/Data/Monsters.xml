@@ -11,7 +11,7 @@
         AnimationName="BlueCrabAnim"
         PortraitAnimationName="BlueCrabPortraitAnim"
         BaseHealth="6"
-        Strength="4">
+        Strength="3">
   </MonsterPrototype>
 
   <MonsterPrototype Name="Seegul"
@@ -24,7 +24,7 @@
   <MonsterPrototype Name="Croco"
         AnimationName="CrocoAnim"
         PortraitAnimationName="CrocoPortraitAnim"
-        BaseHealth="6"
+        BaseHealth="8"
         Strength="4">
   </MonsterPrototype>
 

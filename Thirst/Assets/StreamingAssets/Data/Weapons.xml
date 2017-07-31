@@ -2,22 +2,22 @@
 
   <WeaponPrototype Name="FishBone"
         AnimationName="FishBoneAnim"
-        GainAttack="0">
+        GainAttack="1">
   </WeaponPrototype>
 
   <WeaponPrototype Name="Spoon"
         AnimationName="SpoonAnim"
-        GainAttack="1">
+        GainAttack="2">
   </WeaponPrototype>
   
   <WeaponPrototype Name="Trident"
         AnimationName="TridentAnim"
-        GainAttack="2">
+        GainAttack="3">
   </WeaponPrototype>
   
   <WeaponPrototype Name="Harpon"
         AnimationName="HarponAnim"
-        GainAttack="3">
+        GainAttack="4">
   </WeaponPrototype>
 
 </ArrayOfWeaponPrototype>

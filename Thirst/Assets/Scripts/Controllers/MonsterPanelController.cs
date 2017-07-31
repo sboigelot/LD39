@@ -15,6 +15,12 @@ namespace Assets.Scripts.Controllers
 
         public void Redraw(Monster monster)
         {
+            if (Monster != monster)
+            {
+                var image = GetComponent<Image>();
+                image.color = Color.white;
+            }
+
             Monster = monster;
 
             if (monster == null)

@@ -80,7 +80,7 @@ namespace Assets.Scripts.Controllers
         /// </summary>
         public void PlayCurrentClip()
         {
-            controlledAudioSource.volume = 0.05f;
+            controlledAudioSource.volume = Volume;
             // Stop the active clip:
             controlledAudioSource.Stop();
 

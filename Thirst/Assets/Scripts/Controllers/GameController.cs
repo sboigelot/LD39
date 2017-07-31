@@ -12,21 +12,24 @@ namespace Assets.Scripts.Controllers
     public class GameController : MonoBehaviourSingleton<GameController>
     {
         public GameObject StartGamePanel;
+        public GameObject StoryPanel;
 
         public GameObject AttackAnimImage;
-
-        public AudioClip Birds;
-        public AudioClip Drink;
+        
+        public AudioClip Explosion;
         public AudioClip Loose;
-        public AudioClip Shoot;
-        public AudioClip WateDrop;
-        public AudioClip Weapon;
+        public AudioClip Garbage;
+        public AudioClip Move;
+        public AudioClip Popup;
+        public AudioClip Scan;
+        public AudioClip Drink;
         public AudioClip Win;
 
         public void Awake()
         {
             StartGamePanel.SetActive(true);
             TutorialController.Instance.gameObject.SetActive(true);
+            StoryPanel.SetActive(true);
             StartCoroutine(
                     PrototypeManager.Instance.LoadPrototypes(OnPrototypeLoaded)
                 );
@@ -54,7 +57,7 @@ namespace Assets.Scripts.Controllers
                 return;
             }
 
-            Instance.PlaySound(Instance.Shoot);
+            Instance.PlaySound(Instance.Explosion);
 
             Vector2 tileOnScreen = tileController.gameObject.transform.position;
 
@@ -74,7 +77,24 @@ namespace Assets.Scripts.Controllers
         private void OnPrototypeLoaded()
         {
             RestartGame();
-            //DialogBoxManager.Instance.Show(typeof(MainMenuController));
+            StartCoroutine(PreloadAnim());
+        }
+
+        private IEnumerator PreloadAnim()
+        {
+            var allFrames = PrototypeManager
+                .Instance
+                .AnimationPrototypes
+                .SelectMany(a => a.Frames)
+                .Distinct()
+                .ToList();
+
+            foreach (var frame in allFrames)
+            {
+                Debug.Log("Preloading image: " + frame);
+                StartCoroutine(SpriteManager.Set(sprite => { }, "Images", frame));
+                yield return null;
+            }
         }
 
         public void RestartGame()
