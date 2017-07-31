@@ -49,6 +49,8 @@ namespace Assets.Scripts.Controllers
             {
                 var monster = monsters.FirstOrDefault();
                 monsterPanelController.Redraw(monster);
+                var image = monsterPanelController.GetComponent<Image>();
+                image.color = Color.white;
                 if (monsters.Any())
                 {
                     monsters.RemoveAt(0);
