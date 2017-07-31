@@ -5,6 +5,7 @@ using Assets.Scripts.Managers;
 using Assets.Scripts.Managers.DialogBoxes;
 using Assets.Scripts.Models;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Assets.Scripts.Controllers
 {
@@ -13,6 +14,14 @@ namespace Assets.Scripts.Controllers
         public GameObject StartGamePanel;
 
         public GameObject AttackAnimImage;
+
+        public AudioClip Birds;
+        public AudioClip Drink;
+        public AudioClip Loose;
+        public AudioClip Shoot;
+        public AudioClip WateDrop;
+        public AudioClip Weapon;
+        public AudioClip Win;
 
         public void Awake()
         {
@@ -44,6 +53,8 @@ namespace Assets.Scripts.Controllers
             {
                 return;
             }
+
+            Instance.PlaySound(Instance.Shoot);
 
             Vector2 tileOnScreen = tileController.gameObject.transform.position;
 
@@ -122,6 +133,26 @@ namespace Assets.Scripts.Controllers
             {
                 GameManager.Instance.Level.Mermaid.Move(mx, my);
                 MonstersPanelController.Instance.RedrawMonstersSurroundingMermaid();
+            }
+        }
+
+        public void PlaySound(AudioClip sound)
+        {
+            var slider = GameObject.Find("SoundEffectSlider");
+            var volume = 0.25f;
+            if (slider != null)
+            {
+                volume = slider.GetComponent<Slider>().value;
+            }
+
+            var audioSource = GetComponent<AudioSource>();
+            if (audioSource != null)
+            {
+                audioSource.volume = volume;
+                audioSource.loop = false;
+                audioSource.Stop();
+                audioSource.clip = sound;
+                audioSource.Play();
             }
         }
     }

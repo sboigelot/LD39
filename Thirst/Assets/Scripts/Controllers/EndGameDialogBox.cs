@@ -27,18 +27,22 @@ namespace Assets.Scripts.Controllers
                 case GameOverReason.Thirst:
                     VictoryImage.sprite = ThirthPicture;
                     VictoryFlavorText.text = "You ran out of water and lost all your magic power...";
+                    GameController.Instance.PlaySound(GameController.Instance.Loose);
                     break;
                 case GameOverReason.Trap:
                     VictoryImage.sprite = ThirthPicture;
                     VictoryFlavorText.text = "You trapped yourself in walls away from the see...";
+                    GameController.Instance.PlaySound(GameController.Instance.Loose);
                     break;
                 case GameOverReason.Wound:
                     VictoryImage.sprite = WoundPicture;
                     VictoryFlavorText.text = "Lurking monsters in the sand got the last of you...";
+                    GameController.Instance.PlaySound(GameController.Instance.Loose);
                     break;
                 case GameOverReason.Victory:
                     VictoryImage.sprite = EscapePicture;
                     VictoryFlavorText.text = "You managed to escape and swim free to the see!";
+                    GameController.Instance.PlaySound(GameController.Instance.Win);
                     break;
             }
         }

@@ -254,7 +254,8 @@ namespace Assets.Scripts.Models
             {
                 return;
             }
-            
+
+            GameController.Instance.PlaySound(GameController.Instance.Shoot);
             Discard(cardName);
             DrawCards(3);
         }

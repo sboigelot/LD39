@@ -16,7 +16,7 @@ namespace Assets.Scripts.Models
 
         public void TriggerMonsterSpawnProbability(TilePrototype tileProto)
         {
-            var difficultyModifier = .025f * (GameManager.Instance.Difficulty - 1);
+            var difficultyModifier = GameManager.Instance.DifficultySpawnMonsterModifier * (GameManager.Instance.Difficulty - 1);
 
             var sumProb = tileProto.MonsterSpawnProbabilities.
                 Sum(p => p.GetProbabilityIncreasedBy(difficultyModifier));
@@ -48,6 +48,7 @@ namespace Assets.Scripts.Models
                 return;
             }
 
+            GameController.Instance.PlaySound(GameController.Instance.Birds);
             Monster = new Monster
             {
                 PrototypeName = prototype.Name,
@@ -88,6 +89,7 @@ namespace Assets.Scripts.Models
                 return;
             }
 
+            GameController.Instance.PlaySound(GameController.Instance.Weapon);
             Weapon = prototype.Name;
         }
 
@@ -121,6 +123,7 @@ namespace Assets.Scripts.Models
                 return;
             }
 
+            GameController.Instance.PlaySound(GameController.Instance.WateDrop);
             Item = prototype.Name;
         }
 
@@ -131,7 +134,7 @@ namespace Assets.Scripts.Models
                 return;
             }
 
-            //TODO confirmation swap
+            GameController.Instance.PlaySound(GameController.Instance.Weapon);
 
             var mermaid = GameManager.Instance.Level.Mermaid;
             mermaid.WeaponName = Weapon;
@@ -151,6 +154,8 @@ namespace Assets.Scripts.Models
             {
                 return;
             }
+
+            GameController.Instance.PlaySound(GameController.Instance.Drink);
 
             var mermaid = GameManager.Instance.Level.Mermaid;
             mermaid.WaterLevel = Math.Min(
