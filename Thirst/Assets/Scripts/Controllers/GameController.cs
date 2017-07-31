@@ -12,12 +12,51 @@ namespace Assets.Scripts.Controllers
     {
         public GameObject StartGamePanel;
 
+        public GameObject AttackAnimImage;
+
         public void Awake()
         {
             StartGamePanel.SetActive(true);
             StartCoroutine(
                     PrototypeManager.Instance.LoadPrototypes(OnPrototypeLoaded)
                 );
+        }
+
+        public void StartAttackAnim(Tile monsterTile)
+        {
+            if (AttackAnimImage == null)
+            {
+                return;
+            }
+
+            if (MapController.Instance.TileControllers == null)
+            {
+                return;
+            }
+
+            var tileController = MapController.
+                Instance.
+                TileControllers.
+                FirstOrDefault(tc => tc.Tile == monsterTile);
+
+            if (tileController == null)
+            {
+                return;
+            }
+
+            Vector2 tileOnScreen = tileController.gameObject.transform.position;
+
+            AttackAnimImage.transform.position = 
+                new Vector3(tileOnScreen.x - 30, tileOnScreen.y + 30);
+
+            AttackAnimImage.SetActive(true);
+            StartCoroutine(HideAttackAnim());
+        }
+
+        private IEnumerator HideAttackAnim()
+        {
+            yield return new WaitForSeconds(0.6f);
+            AttackAnimImage.SetActive(false);
         }
 
         private void OnPrototypeLoaded()

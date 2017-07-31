@@ -229,5 +229,12 @@
   <AnimationPrototype Name="SewerAnim">
     <Frame>Tiles\exit</Frame>
   </AnimationPrototype>
-  
+
+  <AnimationPrototype Name="AttackAnim" 
+                      FrameDelay="0.2">
+    <Frame>Effects\X-1</Frame>
+    <Frame>Effects\X-2</Frame>
+    <Frame>Effects\X-3</Frame>
+    <Frame>Effects\X-2</Frame>
+  </AnimationPrototype>
 </ArrayOfAnimationPrototype>

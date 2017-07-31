@@ -198,6 +198,15 @@ namespace Assets.Scripts.Models
         {
             var monster = monsterTile.Monster;
             
+            GameController.Instance.StartAttackAnim(monsterTile);
+
+            var monsterPanelController = MonstersPanelController.Instance.MonsterPanels.
+                        FirstOrDefault(tc => tc.Monster == monster);
+            if (monsterPanelController != null)
+            {
+                monsterPanelController.StartBlink();
+            }
+
             //deal monster attack to health
             var monsterProto = PrototypeManager.FindMonsterPrototype(monster.PrototypeName);
             Health -= monsterProto.Strength;

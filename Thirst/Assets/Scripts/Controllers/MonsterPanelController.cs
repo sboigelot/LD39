@@ -1,3 +1,4 @@
+using System.Collections;
 using Assets.Scripts.Managers;
 using Assets.Scripts.Models;
 using UnityEngine;
@@ -10,9 +11,12 @@ namespace Assets.Scripts.Controllers
         public ImageAnimationController Portrait;
         public Slider HealthSlider;
         public Text AttackText;
+        public Monster Monster;
 
         public void Redraw(Monster monster)
         {
+            Monster = monster;
+
             if (monster == null)
             {
                 gameObject.SetActive(false);
@@ -31,6 +35,19 @@ namespace Assets.Scripts.Controllers
             HealthSlider.maxValue = proto.BaseHealth;
             HealthSlider.value = proto.BaseHealth - monster.Health;
             gameObject.SetActive(true);
+        }
+
+        public void StartBlink()
+        {
+            StartCoroutine(Blink());
+        }
+
+        private IEnumerator Blink()
+        {
+            var image = GetComponent<Image>();
+            image.color = Color.red;
+            yield return new WaitForSeconds(0.25f);
+            image.color = Color.white;
         }
     }
 }
