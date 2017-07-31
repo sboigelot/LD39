@@ -26,6 +26,8 @@ namespace Assets.Scripts.Controllers
             Redraw();
         }
 
+        public bool HideOnTileDisplay;
+
         public void Redraw()
         {
             if (GameManager.Instance.Level == null)
@@ -33,11 +35,12 @@ namespace Assets.Scripts.Controllers
                 return;
             }
 
-            if (false)
+            if (true)
             {
                 //Cheat mode: see the exit
                 if (X == GameManager.Instance.Level.ExitLocationX &&
-                    Y == GameManager.Instance.Level.ExitLocationY)
+                    Y == GameManager.Instance.Level.ExitLocationY &&
+                    Tile == null)
                 {
                     image.color = Color.white;
                     imageAnimationController.AnimationName = "GridAnim";
@@ -65,7 +68,9 @@ namespace Assets.Scripts.Controllers
             imageAnimationController.AnimationName = Tile.AnimationName;
 
             OnTileDisplay = OnTileDisplay ?? CreateOnTileDisplay();
-
+            
+            OnTileDisplay.GetComponent<Image>().color = HideOnTileDisplay ? new Color(0, 0, 0, 0) : Color.white;
+            
             if (X == GameManager.Instance.Level.Mermaid.X &&
                 Y == GameManager.Instance.Level.Mermaid.Y)
             {

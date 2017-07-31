@@ -179,7 +179,10 @@ namespace Assets.Scripts.Models
             if (X == GameManager.Instance.Level.ExitLocationX &&
                 Y == GameManager.Instance.Level.ExitLocationY)
             {
-                GameController.Instance.GameOver(GameOverReason.Victory);
+                GameController.Instance.StartEndAnim(newPositionTile.Tile, () =>
+                {
+                    GameController.Instance.GameOver(GameOverReason.Victory);
+                });
             }
             else
             {
@@ -192,7 +195,7 @@ namespace Assets.Scripts.Models
                 Debug.WriteLine("Invalid move - no more water");
                 return;
             }
-
+            
             newPositionTile.Redraw();
         }
 

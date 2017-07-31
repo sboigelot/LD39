@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Linq;
 using System.Xml;
 using Assets.Scripts.Managers;
@@ -15,7 +16,9 @@ namespace Assets.Scripts.Controllers
         public GameObject StoryPanel;
 
         public GameObject AttackAnimImage;
-        
+        public GameObject SewerEnterAnimImage;
+        public GameObject SewerExitAnimImage;
+
         public AudioClip Explosion;
         public AudioClip Loose;
         public AudioClip Garbage;
@@ -35,7 +38,49 @@ namespace Assets.Scripts.Controllers
                 );
         }
 
-        public void StartAttackAnim(Tile monsterTile)
+        public Rect RectTransformToScreenSpace(RectTransform transform)
+        {
+            Vector2 size = Vector2.Scale(transform.rect.size, transform.lossyScale);
+            return new Rect((Vector2)transform.position - (size * 0.5f), size);
+        }
+
+        public void StartEndAnim(Tile tile, Action onCompleted)
+        {
+            var tileController = MapController.
+                Instance.
+                TileControllers.
+                FirstOrDefault(tc => tc.Tile == tile);
+            if (tileController == null)
+            {
+                onCompleted();
+                return;
+            }
+
+            var pos = RectTransformToScreenSpace(tileController.GetComponent<RectTransform>());
+            StartCoroutine(StartEndAnimCoroutine(tileController, pos, onCompleted));
+        }
+
+        private IEnumerator StartEndAnimCoroutine(TileContoller tileGameObject, Rect pos, Action onCompleted)
+        {
+            tileGameObject.HideOnTileDisplay = true;
+            tileGameObject.Redraw();
+
+            var rectTransform = SewerEnterAnimImage.GetComponent<RectTransform>();
+            SewerEnterAnimImage.SetActive(true);
+            Vector2 adjustedPos = new Vector2(pos.center.x - 44, pos.center.y + 65);
+            rectTransform.SetPositionAndRotation(adjustedPos, Quaternion.identity);
+            yield return new WaitForSeconds(5f * 0.2f);
+
+            SewerEnterAnimImage.SetActive(false);
+            SewerExitAnimImage.SetActive(true);
+            yield return new WaitForSeconds(6f * 0.2f);
+
+            SewerExitAnimImage.SetActive(false);
+            tileGameObject.HideOnTileDisplay = false;
+            onCompleted();
+        }
+
+        public void StartAttackAnim(Tile tile)
         {
             if (AttackAnimImage == null)
             {
@@ -46,25 +91,27 @@ namespace Assets.Scripts.Controllers
             {
                 return;
             }
-
+            
             var tileController = MapController.
                 Instance.
                 TileControllers.
-                FirstOrDefault(tc => tc.Tile == monsterTile);
-
+                FirstOrDefault(tc => tc.Tile == tile);
+            
             if (tileController == null)
             {
                 return;
             }
 
             Instance.PlaySound(Instance.Explosion);
-
-            Vector2 tileOnScreen = tileController.gameObject.transform.position;
-
-            AttackAnimImage.transform.position = 
-                new Vector3(tileOnScreen.x - 30, tileOnScreen.y + 30);
-
+            var pos = RectTransformToScreenSpace(tileController.GetComponent<RectTransform>());
+          
+            Vector2 adjustedPos = new Vector2(pos.center.x - 44, pos.center.y + 44);
+            
+            var attackRectTransform = AttackAnimImage.GetComponent<RectTransform>();
             AttackAnimImage.SetActive(true);
+            attackRectTransform.SetPositionAndRotation(adjustedPos, Quaternion.identity);
+            
+
             StartCoroutine(HideAttackAnim());
         }
 

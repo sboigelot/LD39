@@ -226,4 +226,26 @@
     <Frame>Effects\X-3</Frame>
     <Frame>Effects\X-2</Frame>
   </AnimationPrototype>
+
+  <AnimationPrototype Name="SewerEnterAnim"
+                      FrameDelay="0.2">
+    <Frame>Effects\f1</Frame>
+    <Frame>Effects\f2</Frame>
+    <Frame>Effects\f3</Frame>
+    <Frame>Effects\f4</Frame>
+    <Frame>Effects\f5</Frame>
+    <Frame>Effects\f6</Frame>
+  </AnimationPrototype>
+
+  <AnimationPrototype Name="SewerExitAnim"
+                      FrameDelay="0.2">
+    <Frame>Effects\e1</Frame>
+    <Frame>Effects\e2</Frame>
+    <Frame>Effects\e3</Frame>
+    <Frame>Effects\e4</Frame>
+    <Frame>Effects\e5</Frame>
+    <Frame>Effects\e6</Frame>
+    <Frame>Effects\e7</Frame>
+  </AnimationPrototype>
+
 </ArrayOfAnimationPrototype>
