@@ -43,11 +43,7 @@ namespace Assets.Scripts.Controllers
             ) - 1;
 
             var distancePercent = distance / maxDistance;
-            
             var actualDegree = distancePercent * 184 - 92;
-            if (distancePercent >= .5f)
-                actualDegree = -actualDegree;
-
             destinationRotationZ = actualDegree;
             timeSinceLastTest = 0;
 
