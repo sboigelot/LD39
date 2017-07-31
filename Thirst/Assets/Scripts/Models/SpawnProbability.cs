@@ -9,5 +9,10 @@ namespace Assets.Scripts.Models
 
         [XmlAttribute]
         public float Probability;
+
+        public float GetProbabilityIncreasedBy(float difficulty)
+        {
+            return Probability + difficulty;
+        }
     }
 }

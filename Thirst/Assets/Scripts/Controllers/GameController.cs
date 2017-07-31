@@ -17,6 +17,7 @@ namespace Assets.Scripts.Controllers
         public void Awake()
         {
             StartGamePanel.SetActive(true);
+            TutorialController.Instance.gameObject.SetActive(true);
             StartCoroutine(
                     PrototypeManager.Instance.LoadPrototypes(OnPrototypeLoaded)
                 );

@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 namespace Assets.Scripts.Controllers
 {
-    public class TutorialController : MonoBehaviour
+    public class TutorialController : MonoBehaviourSingleton<TutorialController>
     {
         public TutoStepController[] Steps;
         public int CurrentStep = -1;

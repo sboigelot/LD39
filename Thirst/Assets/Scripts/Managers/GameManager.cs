@@ -9,6 +9,10 @@ namespace Assets.Scripts.Managers
     {
         public Level Level { get; private set; }
 
+        public int Difficulty = 1;
+
+        public float DifficultySpawnMonsterModifier = .025f;
+
         public void NewGame(Level level)
         {
             Level = level;
@@ -21,6 +25,15 @@ namespace Assets.Scripts.Managers
 
         public void GameOver(GameOverReason reason)
         {
+            if (reason == GameOverReason.Victory)
+            {
+                Difficulty++;
+            }
+            else
+            {
+                Difficulty = 1;
+            }
+
             StopLevel();
         }
     }

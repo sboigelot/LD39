@@ -16,7 +16,10 @@ namespace Assets.Scripts.Models
 
         public void TriggerMonsterSpawnProbability(TilePrototype tileProto)
         {
-            var sumProb = tileProto.MonsterSpawnProbabilities.Sum(p => p.Probability);
+            var difficultyModifier = .025f * (GameManager.Instance.Difficulty - 1);
+
+            var sumProb = tileProto.MonsterSpawnProbabilities.
+                Sum(p => p.GetProbabilityIncreasedBy(difficultyModifier));
 
             if (Math.Abs(sumProb) < 0.0001f)
             {
@@ -29,12 +32,13 @@ namespace Assets.Scripts.Models
                 return;
             }
 
+            var reFocusProb = randomProb * sumProb;
             SpawnProbability selectedSpawn = null;
             var selectedIndex = 0;
-            while (randomProb >= 0)
+            while (reFocusProb >= 0)
             {
                 selectedSpawn = tileProto.MonsterSpawnProbabilities[selectedIndex];
-                randomProb -= selectedSpawn.Probability;
+                reFocusProb -= selectedSpawn.GetProbabilityIncreasedBy(difficultyModifier);
                 selectedIndex++;
             }
 
