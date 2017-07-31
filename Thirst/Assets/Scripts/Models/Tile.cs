@@ -95,6 +95,11 @@ namespace Assets.Scripts.Models
 
         public void TriggerItemSpawnProbability(TilePrototype tileProto)
         {
+            if (!string.IsNullOrEmpty(Weapon))
+            {
+                return;
+            }
+
             var sumProb = tileProto.ItemSpawnProbabilities.Sum(p => p.Probability);
 
             if (Math.Abs(sumProb) < 0.0001f)
